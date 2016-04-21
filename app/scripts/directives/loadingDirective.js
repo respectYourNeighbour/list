@@ -2,6 +2,7 @@ angular.module('appWrapService')
 
 .directive('loading',   ['$http' ,function ($http)
 {
+    'use strict';
     return {
         restrict: 'A',
         link: function (scope, elm, attrs)
@@ -26,6 +27,7 @@ angular.module('appWrapService')
 }])
 
 .directive('tooltip', function(){
+    'use strict';
     return {
         restrict: 'A',
         link: function(scope, element, attrs){

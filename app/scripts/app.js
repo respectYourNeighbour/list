@@ -1,4 +1,4 @@
-angular.module('myAngularApp', ['satellizer', 'ui.router', 'toastr', 'ngRoute', 'ngSanitize', 'youtube-embed',
+angular.module('myAngularApp', ['satellizer', 'ui.router', 'toastr', 'ngRoute', 'ngSanitize',
     'ArtaHomeCtrl',
         'RepeatController',
     'ListeCtrl',

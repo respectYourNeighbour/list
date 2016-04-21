@@ -1,10 +1,11 @@
 angular.module('matchAccessLevel', []).filter('matchAccessLevel', function() {
+    'use strict';
     return function( items, userAccessLevel, oneGroup ) {
        // console.log('matchAccessLevel',arguments);
         var filtered = [];
         angular.forEach(items, function(item) {
-            if(oneGroup == true){
-                if( userAccessLevel == item.menuLevel) {
+            if(oneGroup === true){
+                if( userAccessLevel === item.menuLevel) {
                     filtered.push(item);
                 }
             }else{

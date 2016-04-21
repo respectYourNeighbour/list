@@ -2,6 +2,8 @@
 *****Controller on the app Body****
 ***********************************/
 angular.module('appWrapController', []).controller('appWrapController', ['$scope', '$http', '$routeParams', '$location', '$window', 'appWrapService', '$state', 'LoginService', function($scope, $http, $routeParams, $location, $window, appWrapService, $state, LoginService) {
+    'use strict';
+
     console.log('app wrap controller');
 
     $scope.isAuthenticated = function() {
@@ -11,10 +13,10 @@ angular.module('appWrapController', []).controller('appWrapController', ['$scope
 
     $scope.logout = function() {
         LoginService.logout().then(function(response) {
-            console.log('logged out');
+            console.log('logged out', response);
             $state.go('/home');
         });
-    }
+    };
 
     appWrapService.getMenu()
         .success(function(data) {
@@ -26,6 +28,7 @@ angular.module('appWrapController', []).controller('appWrapController', ['$scope
 
     //google analytics
     $scope.$on('$viewContentLoaded', function(event) {
+        console.log('event', event);
         $window.ga('send', 'pageview', { page: $location.path() });
     });
 
@@ -33,7 +36,7 @@ angular.module('appWrapController', []).controller('appWrapController', ['$scope
         $scope.accessLevel = newVal;
         $scope.onlyOneGroup = true;
         if(newVal > 0){
-            $('#homeButton').removeClass('hide')
+            $('#homeButton').removeClass('hide');
         }else{
             $('#homeButton').addClass('hide');
         }
@@ -47,17 +50,18 @@ angular.module('appWrapController', []).controller('appWrapController', ['$scope
         mobileMenuButton = document.querySelector('#mobileMenuBtn');
         mobileMenuButtonAnimate = document.querySelector('.menu-icon');
 
-        if (document.addEventListener) {                // For all major browsers, except IE 8 and earlier
-            mobileMenuButton.addEventListener('click', slideMenu);
-        } else if (document.attachEvent) {              // For IE 8 and earlier versions
-            mobileMenuButton.attachEvent('onclick', slideMenu);
-        }
-
         function slideMenu(){
             mobileMenuButtonAnimate.classList.toggle('open');
             $( '#MenuWrapper' ).slideToggle( 'slow', function() {
                 // Animation complete.
             });
+        }
+
+
+        if (document.addEventListener) {                // For all major browsers, except IE 8 and earlier
+            mobileMenuButton.addEventListener('click', slideMenu);
+        } else if (document.attachEvent) {              // For IE 8 and earlier versions
+            mobileMenuButton.attachEvent('onclick', slideMenu);
         }
 
     });
@@ -67,7 +71,7 @@ angular.module('appWrapController', []).controller('appWrapController', ['$scope
     $scope.memoriseMenuRoute = [];
     $scope.memoriseMenuRouteShort = [];
     $scope.clickMenuItem = function(event) {
-        console.log('click a element ' + this)
+        console.log('click a element ' + this);
         /*
             Fac clear la text input field din Search: document.getElementById('searchField').value = '';
             Fac clear si la $scope search filter: $scope.justAquery1 = '';
@@ -89,13 +93,13 @@ angular.module('appWrapController', []).controller('appWrapController', ['$scope
             $scope.onlyOneGroup = true;
         }
         if($scope.accessLevel > 0){
-            $('#homeButton').removeClass('hide')
+            $('#homeButton').removeClass('hide');
         }
 
         $scope.memoriseMenuRoute.push(event.target.href);
         $scope.shortPath = $scope.memoriseMenuRoute[($scope.memoriseMenuRoute.length-1)].split('/').pop();
 
-        if(event.target.dataset.lastmenu == 'false'){
+        if(event.target.dataset.lastmenu === 'false'){
             $scope.memoriseMenuRouteShort.push($scope.shortPath);
             $scope.memoriseMenuId.push($scope.accessLevel);
         }else{
@@ -106,33 +110,33 @@ angular.module('appWrapController', []).controller('appWrapController', ['$scope
             });*/
         }
 
-    }
+    };
 
     $scope.memoriseMenuId = [];
     $scope.clickHomeButton = function(event){
-        console.log('click home buton');
+        console.log('click home buton', event);
         $scope.memoriseMenuRouteShort.pop();
         $scope.memoriseMenuId.pop();
 
-        if($scope.memoriseMenuRouteShort.length == 0){
+        if($scope.memoriseMenuRouteShort.length === 0){
             $state.go('/home');
         }else{
             $location.path($scope.memoriseMenuRouteShort[($scope.memoriseMenuRouteShort.length-1)]);
         }
 
-        $scope.result = parseFloat($scope.memoriseMenuId[($scope.memoriseMenuId.length-1)])
+        $scope.result = parseFloat($scope.memoriseMenuId[($scope.memoriseMenuId.length-1)]);
         $scope.accessLevel = $scope.result;
 
-        if($scope.memoriseMenuId.length == 0){
+        if($scope.memoriseMenuId.length === 0){
             $scope.accessLevel = 0;
             $('#homeButton').addClass('hide');
         }
-    }
+    };
 
     $('#searchField').bind('input', function() {
         $scope.accessLevel = 1000;
         $scope.onlyOneGroup = false;
-        if($('#searchField').val() == ''){
+        if($('#searchField').val() === ''){
             $scope.accessLevel = 0;
         }
     });
@@ -142,6 +146,7 @@ angular.module('appWrapController', []).controller('appWrapController', ['$scope
 
 //RepeatController Controller
 angular.module('RepeatController', []).controller('RepeatController', ['$scope', function($scope) {
+    'use strict';
     console.log('RepeatController Controller');
 
     $scope.$watch('$index', function(index) {
@@ -155,9 +160,10 @@ angular.module('RepeatController', []).controller('RepeatController', ['$scope',
 ********** Home Controller ********
 ***********************************/
 angular.module('HomeCtrl', []).controller('HomeCtrl', ['$scope', '$routeParams', 'resolveUlMeu', function($scope, $routeParams, resolveUlMeu) {
+    'use strict';
     console.log('HomeController');
     $scope.changeAccessLevel(0);
-    console.log('resolve',resolveUlMeu)
+    console.log('resolve',resolveUlMeu);
     $scope.WelcomeMessage = 'Welcome Home!';
 }]);
 
@@ -168,7 +174,8 @@ angular.module('HomeCtrl', []).controller('HomeCtrl', ['$scope', '$routeParams',
 ***********************************/
 
 //Arta Home Controller
-angular.module('ArtaHomeCtrl', []).controller('ArtaHomeCtrl', ['$scope', '$log', '$filter', '$routeParams', function($scope, $log, $filter, $routeParams) {
+angular.module('ArtaHomeCtrl', []).controller('ArtaHomeCtrl', ['$scope', function($scope) {
+    'use strict';
     console.log('Arta Home Controller');
     $scope.WelcomeMessage = 'Welcome to Arta Home!';
     $scope.changeAccessLevel(1);
@@ -181,7 +188,8 @@ angular.module('ArtaHomeCtrl', []).controller('ArtaHomeCtrl', ['$scope', '$log',
 ***********************************/
 
 //Liste Home Controller
-angular.module('ListeCtrl', []).controller('ListeCtrl', ['$scope', '$log', '$filter', '$routeParams', function($scope, $log, $filter, $routeParams) {
+angular.module('ListeCtrl', []).controller('ListeCtrl', ['$scope', function($scope) {
+    'use strict';
     console.log('Liste Home Controller');
     $scope.WelcomeMessage = 'Welcome to Liste Home!';
     $scope.changeAccessLevel(2);
@@ -189,6 +197,7 @@ angular.module('ListeCtrl', []).controller('ListeCtrl', ['$scope', '$log', '$fil
 
 //Top Carti Controller
 angular.module('TopCartiCtrl', []).controller('TopCartiCtrl', ['$scope', '$log', '$filter', '$routeParams', 'topCartiService', function($scope, $log, $filter, $routeParams, topCartiService) {
+    'use strict';
     $scope.WelcomeMessage = 'Welcome to Top Carti!';
     $scope.changeAccessLevel(21);
 
@@ -201,13 +210,13 @@ angular.module('TopCartiCtrl', []).controller('TopCartiCtrl', ['$scope', '$log',
     topCartiService.getTopCarti().success(function(data){
 
         for(var i=0;i<data.length;i++){
-            $scope.timeStamp = parseInt(data[i]._id.toString().substr(0,8), 16)*1000
-            date = new Date($scope.timeStamp)
+            $scope.timeStamp = parseInt(data[i]._id.toString().substr(0,8), 16)*1000;
+            var date = new Date($scope.timeStamp);
             data[i].data = date;
 
-            if(data[i].category == 'crestine'){
+            if(data[i].category === 'crestine'){
                 $scope.cartiCrestine.push(data[i]);
-            }else if(data[i].category == 'interesante'){
+            }else if(data[i].category === 'interesante'){
                 $scope.cartiInteresante.push(data[i]);
             }
         }
@@ -226,7 +235,8 @@ angular.module('TopCartiCtrl', []).controller('TopCartiCtrl', ['$scope', '$log',
 }]);
 
 //Top DESENE Controller
-angular.module('TopDeseneCtrl', []).controller('TopDeseneCtrl', ['$scope', '$log', '$filter', '$routeParams', 'topDeseneService', '$document', function($scope, $log, $filter, $routeParams, topDeseneService, $document) {
+angular.module('TopDeseneCtrl', []).controller('TopDeseneCtrl', ['$scope', '$log', '$filter', '$routeParams', 'topDeseneService', function($scope, $log, $filter, $routeParams, topDeseneService) {
+    'use strict';
     console.log('Top Desene Controller');
     $scope.WelcomeMessage = 'Welcome to Top Desene!';
 
@@ -236,8 +246,8 @@ angular.module('TopDeseneCtrl', []).controller('TopDeseneCtrl', ['$scope', '$log
     topDeseneService.getDesene().success(function(data){
 
         for(var i=0;i<data.length;i++){
-            $scope.timeStamp = parseInt(data[i]._id.toString().substr(0,8), 16)*1000
-            date = new Date($scope.timeStamp)
+            $scope.timeStamp = parseInt(data[i]._id.toString().substr(0,8), 16)*1000;
+            var date = new Date($scope.timeStamp);
             data[i].data = date;
 
             $scope.desene.push(data[i]);
@@ -256,7 +266,8 @@ angular.module('TopDeseneCtrl', []).controller('TopDeseneCtrl', ['$scope', '$log
 }]);
 
 //Top Filme Controller
-angular.module('TopFilmeCtrl', []).controller('TopFilmeCtrl', ['$scope', '$log', '$filter', '$routeParams', function($scope, $log, $filter, $routeParams) {
+angular.module('TopFilmeCtrl', []).controller('TopFilmeCtrl', ['$scope', function($scope) {
+    'use strict';
     console.log('Top Filme Controller');
     $scope.WelcomeMessage = 'Welcome to Top Filme!';
     //$scope.changeAccessLevel(23);
@@ -268,7 +279,8 @@ angular.module('TopFilmeCtrl', []).controller('TopFilmeCtrl', ['$scope', '$log',
 ***********************************/
 
 //Media Home Controller
-angular.module('MediaCtrl', []).controller('MediaCtrl', ['$scope', '$log', '$filter', '$routeParams', function($scope, $log, $filter, $routeParams) {
+angular.module('MediaCtrl', []).controller('MediaCtrl', ['$scope', function($scope) {
+    'use strict';
     console.log('Media Home Controller');
     $scope.WelcomeMessage = 'Welcome to Media Home!';
     $scope.changeAccessLevel(3);
@@ -276,7 +288,8 @@ angular.module('MediaCtrl', []).controller('MediaCtrl', ['$scope', '$log', '$fil
 
 
 //Youtube Controller
-angular.module('YoutubeCtrl', []).controller('YoutubeCtrl', ['$scope', '$log', '$filter', '$routeParams', 'youtubeEmbedUtils', function($scope, $log, $filter, $routeParams, youtubeEmbedUtils) {
+angular.module('YoutubeCtrl', []).controller('YoutubeCtrl', ['$scope', function($scope) {
+    'use strict';
     console.log('Youtube Controller');
     $scope.WelcomeMessage = 'Welcome to Youtube!';
     $scope.theBestVideo1 = 'kKv_eZwJh34';
@@ -289,6 +302,7 @@ angular.module('YoutubeCtrl', []).controller('YoutubeCtrl', ['$scope', '$log', '
 
 //Music Controller
 angular.module('MusicCtrl', []).controller('MusicCtrl', ['$scope', '$log', '$filter', '$routeParams', 'youtubeEmbedUtils', 'musicService', function($scope, $log, $filter, $routeParams, youtubeEmbedUtils, musicService) {
+    'use strict';
     console.log('Music Controller');
     $scope.changeAccessLevel(3241);
 
@@ -302,19 +316,19 @@ angular.module('MusicCtrl', []).controller('MusicCtrl', ['$scope', '$log', '$fil
 
         for(var i=0;i<data.length;i++){
 
-            if(data[i].category == 'calm'){
+            if(data[i].category === 'calm'){
                 $scope.calmMusic.push(data[i]);
-            }else if(data[i].category == 'chill'){
+            }else if(data[i].category === 'chill'){
                 $scope.chillMusic.push(data[i]);
             }
-            else if(data[i].category == 'club'){
+            else if(data[i].category === 'club'){
                 $scope.clubMusic.push(data[i]);
             }
-            else if(data[i].category == 'spaceOut'){
+            else if(data[i].category === 'spaceOut'){
                 $scope.spaceOutMusic.push(data[i]);
             }
         }
-        console.log($scope.calmMusic)
+        console.log($scope.calmMusic);
     });
 
 
@@ -337,21 +351,24 @@ angular.module('MusicCtrl', []).controller('MusicCtrl', ['$scope', '$log', '$fil
 ***********************************/
 
 //Suflet & Minte Home Controller
-angular.module('SufletMinteCtrl', []).controller('SufletMinteCtrl', ['$scope', '$log', '$filter', '$routeParams', function($scope, $log, $filter, $routeParams) {
+angular.module('SufletMinteCtrl', []).controller('SufletMinteCtrl', ['$scope', function($scope) {
+    'use strict';
     console.log('Suflet & Minte Home Controller');
     $scope.WelcomeMessage = 'Welcome to Suflet & Minte Home!';
     $scope.changeAccessLevel(4);
 }]);
 
 //Aforisme Controller
-angular.module('AforismeCtrl', []).controller('AforismeCtrl', ['$scope', '$log', '$filter', '$routeParams', function($scope, $log, $filter, $routeParams) {
+angular.module('AforismeCtrl', []).controller('AforismeCtrl', ['$scope', function($scope) {
+    'use strict';
     console.log('Aforisme Controller');
     $scope.WelcomeMessage = 'Welcome to Aforisme!';
     //$scope.changeAccessLevel(41);
 }]);
 
 //Citate Controller
-angular.module('CitateCtrl', []).controller('CitateCtrl', ['$scope', '$log', '$filter', '$routeParams', function($scope, $log, $filter, $routeParams) {
+angular.module('CitateCtrl', []).controller('CitateCtrl', ['$scope', function($scope) {
+    'use strict';
     console.log('Citate Controller');
     $scope.WelcomeMessage = 'Welcome to Citate!';
     $scope.changeAccessLevel(42);
@@ -359,6 +376,7 @@ angular.module('CitateCtrl', []).controller('CitateCtrl', ['$scope', '$log', '$f
 
 //Citate Aristotel Controller
 angular.module('CitateAristotelCtrl', []).controller('CitateAristotelCtrl', ['$scope', '$log', '$filter', '$routeParams', 'CitateAristotelService', function($scope, $log, $filter, $routeParams, CitateAristotelService) {
+    'use strict';
     console.log('CitateAristotelCtrl Controller');
     $scope.WelcomeMessage = 'Welcome to Citate!';
     $scope.changeAccessLevel(42);
@@ -388,28 +406,32 @@ angular.module('CitateAristotelCtrl', []).controller('CitateAristotelCtrl', ['$s
 
 
 //Cuvinte Controller
-angular.module('CuvinteCtrl', []).controller('CuvinteCtrl', ['$scope', '$log', '$filter', '$routeParams', function($scope, $log, $filter, $routeParams) {
+angular.module('CuvinteCtrl', []).controller('CuvinteCtrl', ['$scope', function($scope) {
+    'use strict';
     console.log('Cuvinte Controller');
     $scope.WelcomeMessage = 'Welcome to Cuvinte!';
     //$scope.changeAccessLevel(43);
 }]);
 
 //Devize De Viata Controller
-angular.module('DevizeDeViataCtrl', []).controller('DevizeDeViataCtrl', ['$scope', '$log', '$filter', '$routeParams', function($scope, $log, $filter, $routeParams) {
+angular.module('DevizeDeViataCtrl', []).controller('DevizeDeViataCtrl', ['$scope', function($scope) {
+    'use strict';
     console.log('Devize De Viata Controller');
     $scope.WelcomeMessage = 'Welcome to Devize De Viata!';
     //$scope.changeAccessLevel(44);
 }]);
 
 //Lozinci Controller
-angular.module('LozinciCtrl', []).controller('LozinciCtrl', ['$scope', '$log', '$filter', '$routeParams', function($scope, $log, $filter, $routeParams) {
+angular.module('LozinciCtrl', []).controller('LozinciCtrl', ['$scope', function($scope) {
+    'use strict';
     console.log('Lozinci Controller');
     $scope.WelcomeMessage = 'Welcome to Lozinci!';
     //$scope.changeAccessLevel(45);
 }]);
 
 //Maxime Controller
-angular.module('MaximeCtrl', []).controller('MaximeCtrl', ['$scope', '$log', '$filter', '$routeParams', function($scope, $log, $filter, $routeParams) {
+angular.module('MaximeCtrl', []).controller('MaximeCtrl', ['$scope', function($scope) {
+    'use strict';
     console.log('Maxime Controller');
     $scope.WelcomeMessage = 'Welcome to Maxime!';
    // $scope.changeAccessLevel(46);
@@ -421,7 +443,8 @@ angular.module('MaximeCtrl', []).controller('MaximeCtrl', ['$scope', '$log', '$f
 ***********************************/
 
 //Folositoare Home Controller
-angular.module('FolositoareCtrl', []).controller('FolositoareCtrl', ['$scope', '$log', '$filter', '$routeParams', function($scope, $log, $filter, $routeParams) {
+angular.module('FolositoareCtrl', []).controller('FolositoareCtrl', ['$scope', function($scope) {
+    'use strict';
     console.log('Folositoare Home Controller');
     $scope.WelcomeMessage = 'Welcome to Folositoare Home!';
     $scope.changeAccessLevel(5);
@@ -430,14 +453,16 @@ angular.module('FolositoareCtrl', []).controller('FolositoareCtrl', ['$scope', '
 
 
 //Constitutia Romaniei Controller
-angular.module('ConstitutiaRomanieiCtrl', []).controller('ConstitutiaRomanieiCtrl', ['$scope', '$log', '$filter', '$routeParams', function($scope, $log, $filter, $routeParams) {
+angular.module('ConstitutiaRomanieiCtrl', []).controller('ConstitutiaRomanieiCtrl', ['$scope', function($scope) {
+    'use strict';
     console.log('Constitutia Romaniei Controller');
     $scope.WelcomeMessage = 'Welcome to Constitutia Romaniei!';
     $scope.changeAccessLevel(51);
 }]);
 
 //Drepturile Omului Controller
-angular.module('DrepturileOmuluiCtrl', []).controller('DrepturileOmuluiCtrl', ['$scope', '$log', '$filter', '$routeParams', function($scope, $log, $filter, $routeParams) {
+angular.module('DrepturileOmuluiCtrl', []).controller('DrepturileOmuluiCtrl', ['$scope', function($scope) {
+    'use strict';
     console.log('Drepturile Omului Controller');
     $scope.WelcomeMessage = 'Welcome to Drepturile Omului!';
     $scope.changeAccessLevel(52);
@@ -448,8 +473,8 @@ angular.module('DrepturileOmuluiCtrl', []).controller('DrepturileOmuluiCtrl', ['
 /**********************************
 ********** Mongodb service ********
 ***********************************/
-angular.module('Menu1Ctrl', []).controller('Menu1Controller', function($scope, appWrapService, $filter, $log) {
-
+angular.module('Menu1Ctrl', []).controller('Menu1Controller', function($scope, appWrapService, $filter) {
+    'use strict';
     console.log('Menu 1  Controller');
 
     //Necessary for clearing the modal form;
@@ -506,52 +531,53 @@ angular.module('Menu1Ctrl', []).controller('Menu1Controller', function($scope, a
 
         appWrapService.create($scope.doc).success(function(data) {
             console.log('this is the new entry returned from the API to the Service and from the Service to the Controller: ',data[0].categoria);
-            if(data[0].categoria == $scope.categories[0].name){
+            if(data[0].categoria === $scope.categories[0].name){
                 $scope.en_ord.push(data[0]);
             }
-            if(data[0].categoria == $scope.categories[1].name){
+            if(data[0].categoria === $scope.categories[1].name){
                 $scope.ett_ord.push(data[0]);
             }
-            if(data[0].categoria == $scope.categories[2].name){
-                console.log('verb')
+            if(data[0].categoria === $scope.categories[2].name){
+                console.log('verb');
                 $scope.verb.push(data[0]);
             }
-            if(data[0].categoria == $scope.categories[3].name){
+            if(data[0].categoria === $scope.categories[3].name){
                 $scope.verb_past_form.push(data[0]);
             }
-            if(data[0].categoria == $scope.categories[4].name){
+            if(data[0].categoria === $scope.categories[4].name){
                 $scope.resor.push(data[0]);
             }
-            if(data[0].categoria == $scope.categories[5].name){
+            if(data[0].categoria === $scope.categories[5].name){
                 $scope.mat.push(data[0]);
             }
-            if(data[0].categoria == $scope.categories[6].name){
+            if(data[0].categoria === $scope.categories[6].name){
                 $scope.medicin.push(data[0]);
             }
 
 
         });
-    }
+    };
 
     $scope.clickCreate = function() {
         $scope.cuvant = '';
         $scope.definitia = '';
         $scope.category = $scope.categories[0];
-    }
+    };
 
     $scope.clickEdit = function(definitie, $event) {
+        console.log('event', $event);
         console.log('definitie '+definitie.categoria);
 
         $scope.entryId = definitie._id;
 
         //get the index position in the array by the category name of the definition selected;
-        pos = $scope.categories.map(function(e) { return e.name; }).indexOf(definitie.categoria);
+        var pos = $scope.categories.map(function(e) { return e.name; }).indexOf(definitie.categoria);
         $scope.category = $scope.categories[pos];
 
         //put the values of the clicked definition in the input fields for it to be modified;
         $scope.cuvant = definitie.cuvant;
         $scope.definitia = definitie.definitia;
-    }
+    };
 
     $scope.formEditSubmit = function() {
         $('#editModal').modal('hide');
@@ -565,7 +591,7 @@ angular.module('Menu1Ctrl', []).controller('Menu1Controller', function($scope, a
             'data':'Aprilie',
             'categoria' : '' + $scope.category.name
         };
-        var obj = {entryId : $scope.entryId, doc : $scope.doc}
+        var obj = {entryId : $scope.entryId, doc : $scope.doc};
 
         appWrapService.update(obj).success(function() {
             console.dir('se reapeleaza dupa ce fac edit');
@@ -583,17 +609,18 @@ angular.module('Menu1Ctrl', []).controller('Menu1Controller', function($scope, a
 
         //this is the document that get's sent to the database;
 
-    }
+    };
 
 
     //this var is for memorizing the entry that needs to be deleted;
     var holdDefinitie;
     $scope.clickDelete = function(definitie, $event) {
+        console.log('event', $event);
         holdDefinitie = definitie;
         $scope.entryCuvant  = definitie.cuvant;
         $scope.entryDefinitie = definitie.definitia;
         $('#modalAlert').modal('show');
-    }
+    };
 
     $scope.confirmDeletion = function() {
 
@@ -614,7 +641,7 @@ angular.module('Menu1Ctrl', []).controller('Menu1Controller', function($scope, a
         });
 
         $('#modalAlert').modal('hide');
-    }
+    };
 
 
     $('#createModal').on('shown.bs.modal', function() {
