@@ -1,0 +1,63 @@
+<div class="row-fluid">
+    <div class="col-xs-12">
+        <p class="white-txt-shadow-effect">HIP.</p>
+    </div>
+</div>
+<!--MUSIC CALM-->
+
+<!-- <div class="row-fluid">
+    <div class="col-xs-12">
+        <p class="white-txt-shadow-effect">CALM.</p>
+    </div>
+</div>
+<div class="container-fluid music">
+    <div class="row">
+        <div class="col-md-12 col-lg-12" style="text-align: center;">
+        	<div class="col-lg-3 col-md-6 col-sm-12" dir-paginate="melody in clubMusic | orderBy: orderList | filter:searchFilter | itemsPerPage: pageSize " pagination-id="music" current-page="currentPage" ng-controller="RepeatController">
+        		<div class="col-lg-12 thumbnail">
+			    	<h3>{{melody.name}}</h3>
+			    	<div class="embed-responsive embed-responsive-16by9">
+				  		<youtube-video class="embed-responsive-item" video-id="melody.youtubeId"></youtube-video>
+					</div>
+				</div>
+            </div>
+            <hr>
+        </div> 
+        <div class="text-center">
+            <dir-pagination-controls boundary-links="true" on-page-change="pageChangeHandler(newPageNumber)" pagination-id="music" template-url="../../libs/angular-utils-pagination/dirPagination.tpl.html"></dir-pagination-controls>
+        </div>
+    </div>
+</div>
+
+ -->
+ 
+<div class="row">
+        <div class="col-md-12 col-lg-10 col-lg-offset-1">
+            <div class="bn-box bn-sepia" dir-paginate="banc in clubMusic | filter:searchFilter | itemsPerPage: pageSize" pagination-id="bancuri" current-page="currentPage">
+                <div class="bn-box-content" >
+                    <!-- <p><strong ng-bind-html="banc.name" ></strong></p> -->
+                    <div>
+                        <span class="bancNr">{{number}}</span>
+                        <p ng-bind-html="banc.body"></p>
+                    </div>
+                    <hr>
+                    <div class="bancInfoWrapper">
+                        <div class="bancDate">
+                            <span class="fa fa fa-calendar"></span> {{banc.data | date:'medium'}}
+                        </div>
+                        <div class="bancLike">
+                            <a ng-click="addLike($event, banc);">
+                                <span class="fa fa-thumbs-o-up"></span>
+                                {{banc.likes}}
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr>
+        </div>
+        
+        <div class="text-center">
+            <dir-pagination-controls boundary-links="true" on-page-change="pageChangeHandler(newPageNumber)" pagination-id="bancuri" template-url="../libs/angular-utils-pagination/dirPagination.tpl.html"></dir-pagination-controls>
+        </div>
+    </div>

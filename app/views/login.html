@@ -1,0 +1,17 @@
+<div class="signin cf">
+    <div class="avatar"></div>
+    <div><h3>Login</h3></div>
+        <form method="post" ng-submit="login.login()" name="loginForm">
+            <div class="inputrow">
+                <input type="text" name="email" ng-model="login.user.email" placeholder="Email" required autofocus/>
+                <label for="name" class="ion-person"></label>
+            </div>
+            <div class="inputrow">
+                <input type="password" name="password" ng-model="login.user.password" placeholder="Password" required/>
+                <label for="pass" class="ion-locked"></label>
+            </div>
+            <button type="submit" ng-disabled="loginForm.$invalid" class="btn btn-lg btn-block btn-success">Log in</button>
+            <a ui-sref="signup">Sign Up</a>
+        </form>
+    </div>
+</div>

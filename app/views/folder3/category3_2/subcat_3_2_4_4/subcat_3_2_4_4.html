@@ -1,0 +1,55 @@
+<div class="row-fluid">
+    <div class="col-xs-12">
+        <p class="white-txt-shadow-effect">HIP.</p>
+    </div>
+</div>
+<!--MUSIC CALM-->
+<div class="row-fluid">
+    <div class="col-xs-12">
+        <p class="white-txt-shadow-effect">CALM.</p>
+    </div>
+</div>
+<div class="container-fluid music">
+
+    <div class="row">
+        <div class="col-xs-12 col-md-4 col-md-offset-2">
+            <span>
+                <label for="name" class='itemsPerPageLabel'>Items per page</label>
+                <input min="1" max="100" class="itemsPerPage" ng-model="pageSize" type="number" />
+            </span>
+        </div>
+        <div class="col-xs-12 col-md-4">
+            <span>
+                <input ng-model="searchFilter.body" id="search" class="basic-slide" id="name" type="text" placeholder="What?" />
+                <label for="name">Search</label>
+            </span>
+        </div>
+        <div class="col-xs-12 col-md-4">
+            <select ng-model="orderList">
+                <option value="likes">Likes ascending</option>
+                <option value="-likes">Likes descending</option>
+            </select>
+        </div>
+
+        
+    </div>
+
+    <div class="row">
+        <div class="col-md-12 col-lg-12" style="text-align: center;">
+        	<div class="col-lg-3 col-md-6 col-sm-12" dir-paginate="melody in spaceOutMusic | orderBy: orderList | filter:searchFilter | itemsPerPage: pageSize " pagination-id="music" current-page="currentPage" ng-controller="RepeatController">
+        		<div class="col-lg-12 thumbnail">
+			    	<h3>{{melody.name}}</h3>
+			    	<div class="embed-responsive embed-responsive-16by9">
+				  		<youtube-video class="embed-responsive-item" video-id="melody.youtubeId"></youtube-video>
+					</div>
+				</div>
+            </div>
+            <hr>
+        </div>
+        
+        <div class="text-center">
+            <dir-pagination-controls boundary-links="true" on-page-change="pageChangeHandler(newPageNumber)" pagination-id="music" template-url="../../libs/angular-utils-pagination/dirPagination.tpl.html"></dir-pagination-controls>
+        </div>
+    </div>
+
+</div>

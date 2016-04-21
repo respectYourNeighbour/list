@@ -1,0 +1,59 @@
+<!-- Aristotel -->
+<div class="container-fluid">
+
+    <div class="row">
+        <div class="col-md-4 col-md-offset-2">
+            <span>
+                <label for="name" class='itemsPerPageLabel'>Items per page</label>
+                <input min="1" max="100" class="itemsPerPage" ng-model="pageSize" type="number" />
+            </span>
+        </div>
+        <div class="col-md-4">
+            <span>
+                <input ng-model="searchFilter" id="search" class="basic-slide" id="name" type="text" placeholder="What?" />
+                <label for="name">Search</label>
+            </span>
+        </div>
+        <div class="col-md-4">
+            <select ng-model="orderList">
+                <option value="likes">Likes ascending</option>
+                <option value="-likes">Likes descending</option>
+            </select>
+        </div>
+
+        
+    </div>
+
+    <div class="row">
+        <div class="col-md-12 col-lg-10 col-lg-offset-1">
+            <div class="bn-box bn-sepia" dir-paginate="citat in citate | orderBy: orderList | filter:searchFilter | itemsPerPage: pageSize " pagination-id="factspaginateid" current-page="currentPage" ng-controller="RepeatController">
+                <div class="bn-box-content" >
+                    <!-- <p><strong ng-bind-html="banc.name" ></strong></p> -->
+                    <div>
+                        <span class="bancNr">{{number}}</span>
+                        <p><b>{{citat.autor}}</b></p>
+                        <p ng-bind-html="citat.citat"></p>
+                    </div>
+                    <hr>
+                    <div class="bancInfoWrapper">
+                        <div class="bancDate">
+                            <span class="fa fa fa-calendar"></span> {{culme.data | date:'medium'}}
+                        </div>
+                        <div class="bancLike">
+                            <a ng-click="addLike($event, banc);">
+                                <span class="fa fa-thumbs-o-up"></span>
+                                {{culme.likes}}
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr>
+        </div>
+        
+        <div class="text-center">
+            <dir-pagination-controls boundary-links="true" on-page-change="pageChangeHandler(newPageNumber)" pagination-id="factspaginateid" template-url="../libs/angular-utils-pagination/dirPagination.tpl.html"></dir-pagination-controls>
+        </div>
+    </div>
+
+</div>
