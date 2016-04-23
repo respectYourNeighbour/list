@@ -5,7 +5,7 @@ angular.module('appWrapService')
     'use strict';
     return {
         restrict: 'A',
-        link: function (scope, elm, attrs)
+        link: function (scope, elm)
         {
             scope.isLoading = function () {
                 return $http.pendingRequests.length > 0;
@@ -30,7 +30,7 @@ angular.module('appWrapService')
     'use strict';
     return {
         restrict: 'A',
-        link: function(scope, element, attrs){
+        link: function(scope, element){
             $(element).hover(function(){
                 // on mouseenter
                 $(element).tooltip('show');

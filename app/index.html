@@ -1,221 +1,226 @@
 <!DOCTYPE html>
 <html lang="en" data-ng-app="myAngularApp">
-    <head>
-        <meta charset="UTF-8">
-        <title>Wise Advice</title>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+    <meta charset="UTF-8">
+    <title>Wise Advice</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <base href="/">
+    <base href="/">
 
-        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!--         FavIcon        -->         <link rel="shortcut icon" type="image/png" href="images/ico.png">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
-        <link rel="shortcut icon" type="image/png" href="images/ico.png">
+    <link rel="shortcut icon" type="image/png" href="images/ico.png">
 
-        <!-- build:css(.) styles/vendor.css -->
-        <!-- bower:css -->
-        <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
-        <link rel="stylesheet" href="bower_components/angular-busy/dist/angular-busy.css" />
-        <link rel="stylesheet" href="bower_components/angular-toastr/dist/angular-toastr.css" />
-        <link rel="stylesheet" href="bower_components/textAngular/dist/textAngular.css" />
-        <!-- endbower -->
-        <!-- endbuild -->
-        <!-- build:css(.tmp) styles/main.css -->
-        <link rel="stylesheet" href="styles/main.css">
-        <!-- endbuild -->
-
-
-
-        <!--******************************
-        ********** GOOGLE FONTS **********
-        **********************************  --> <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
-                                                <link href='http://fonts.googleapis.com/css?family=Patua+One' rel='stylesheet' type='text/css'>
-                                                <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="bower_components/angular-busy/dist/angular-busy.css" />
+    <link rel="stylesheet" href="bower_components/angular-toastr/dist/angular-toastr.css" />
+    <link rel="stylesheet" href="bower_components/textAngular/dist/textAngular.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
 
 
 
+    <!--******************************
+    ********** GOOGLE FONTS **********
+    **********************************  --> <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Patua+One' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
 
-        <!--      Live Reload       -->         <!-- <script src="http://localhost:35729/livereload.js"></script> -->
 
-    </head>
+    <!--      Live Reload       -->         <!-- <script src="http://localhost:35729/livereload.js"></script> -->
+</head>
 
 
 
 
 
 
-    <body data-ng-controller="appWrapController">
+<body data-ng-controller="appWrapController">
 
 
-            <div id="topHeader">
-                <div class="navBarBtn blue" id="registerBtn">
-                    <a data-ng-hide="user.authenticated">Wiseadvice.ro</a>
-                   <!-- <a ui-sref="login" ng-if="!isAuthenticated()">Login</a>
-                    <a ng-click="logout()" ng-if="isAuthenticated()">Logout</a>-->
-                    <!--<a data-ng-show="user.authenticated" href="#" data-ua-logout>Logout</a>-->
-                </div>
-                <div class="navBarBtn blue" id="mobileMenuBtn">
-                    <div class="menu-icon">
-                        <span></span>
-                    </div>
-                </div>
-                <!--<div class="navBarBtn blue" id="loginBtn"><a href="#login">Conectare</a></div>-->
+    <div id="topHeader">
+        <div class="navBarBtn blue" id="registerBtn">
+            <a data-ng-hide="user.authenticated">Wiseadvice.ro</a>
+            <!-- <a ui-sref="login" ng-if="!isAuthenticated()">Login</a>
+            <a ng-click="logout()" ng-if="isAuthenticated()">Logout</a>-->
+            <!--<a data-ng-show="user.authenticated" href="#" data-ua-logout>Logout</a>-->
+        </div>
+        <div class="navBarBtn blue" id="mobileMenuBtn">
+            <div class="menu-icon">
+                <span></span>
             </div>
+        </div>
+        <!--<div class="navBarBtn blue" id="loginBtn"><a href="#login">Conectare</a></div>-->
+    </div>
 
-            <div id="MenuWrapper">
-                <div class="hidden-xs" id="searchBar">
-                    <form action="/search.html">
-                        <input id="searchField" type="text" placeholder="Caută în meniu..." required="" data-ng-model="justAquery1.searchBy">
-                        <div type="submit" data-ng-model="searchField"><i style="font-size:2rem;" class="fa fa-search"></i></div>
-                    </form>
-                </div>
-
-                <nav>
-                    <ul id="homeButton" class="hide">
-                        <li><a href="" data-ng-click='clickHomeButton($event)'><span class="fa fa-home"></span> <b>Înapoi</b></a></li>
-                    </ul>
-                    <div id="menuItems">
-                        <div>
-                            <ul>
-                                <li data-ng-repeat="item in menuItems | matchAccessLevel:accessLevel:onlyOneGroup | filter:justAquery1" ng-class="{active: $index == selected}"><span class="over"></span>
-                                    <a data-lastMenu="{{item.lastMenu}}" ui-sref="{{item.href}}" data-ng-click='clickMenuItem($event)' id="{{item.id}}">
-
-                                        <span><i class="{{item.icon}}"></i></span>
-                                        {{item.name}}
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </nav>
-            </div>
-
-
-        <div class="sidebar-filler hidden-xs"></div>
-
-        <div id="contentWrapper">
-            <div data-ui-view></div>
+    <div id="MenuWrapper">
+        <div class="hidden-xs" id="searchBar">
+            <form action="/search.html">
+                <input id="searchField" type="text" placeholder="Caută în meniu..." required="" data-ng-model="justAquery1.searchBy">
+                <div type="submit" data-ng-model="searchField"><i style="font-size:2rem;" class="fa fa-search"></i></div>
+            </form>
         </div>
 
-        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
-        <script>
-          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-          })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-          ga('create', 'UA-59636239-1', 'auto');
-          ga('send', 'pageview');
-        </script>
-
-        <!-- build:js(.) scripts/oldieshim.js -->
-        <!--[if lt IE 9]>
-        <script src="bower_components/es5-shim/es5-shim.js"></script>
-        <script src="bower_components/json3/lib/json3.js"></script>
-        <![endif]-->
-        <!-- endbuild -->
-
-        <!-- build:js(.) scripts/vendor.js -->
-        <!-- bower:js -->
-        <script src="bower_components/jquery/dist/jquery.js"></script>
-        <script src="bower_components/angular/angular.js"></script>
-        <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
-        <script src="bower_components/angular-aria/angular-aria.js"></script>
-        <script src="bower_components/angular-acl/angular-acl.js"></script>
-        <script src="bower_components/angular-animate/angular-animate.js"></script>
-        <script src="bower_components/angular-busy/dist/angular-busy.js"></script>
-        <script src="bower_components/angular-resource/angular-resource.js"></script>
-        <script src="bower_components/angular-cookies/angular-cookies.js"></script>
-        <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
-        <script src="bower_components/angular-touch/angular-touch.js"></script>
-        <script src="bower_components/angular-route/angular-route.js"></script>
-        <script src="bower_components/angular-toastr/dist/angular-toastr.tpls.js"></script>
-        <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
-        <script src="bower_components/angular-translate/angular-translate.js"></script>
-        <script src="bower_components/satellizer/satellizer.js"></script>
-        <script src="bower_components/angular-translate-storage-cookie/angular-translate-storage-cookie.js"></script>
-        <script src="bower_components/angular-translate-storage-local/angular-translate-storage-local.js"></script>
-        <script src="bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.js"></script>
-        <script src="bower_components/angular-utils-pagination/dirPagination.js"></script>
-        <script src="bower_components/rangy/rangy-core.js"></script>
-        <script src="bower_components/rangy/rangy-classapplier.js"></script>
-        <script src="bower_components/rangy/rangy-highlighter.js"></script>
-        <script src="bower_components/rangy/rangy-selectionsaverestore.js"></script>
-        <script src="bower_components/rangy/rangy-serializer.js"></script>
-        <script src="bower_components/rangy/rangy-textrange.js"></script>
-        <script src="bower_components/textAngular/dist/textAngular.js"></script>
-        <script src="bower_components/textAngular/dist/textAngular-sanitize.js"></script>
-        <script src="bower_components/textAngular/dist/textAngularSetup.js"></script>
-        <script src="bower_components/json3/lib/json3.min.js"></script>
-        <!-- endbower -->
-        <!-- endbuild -->
+        <nav>
+            <ul id="homeButton" class="hide">
+                <li><a href="" data-ng-click='clickHomeButton($event)'><span class="fa fa-home"></span> <b>Înapoi</b></a></li>
+            </ul>
+            <div id="menuItems">
+                <div>
+                    <ul>
+                        <li data-ng-repeat="item in menuItems | matchAccessLevel:accessLevel:onlyOneGroup | filter:justAquery1" ng-class="{active: $index == selected}"><span class="over"></span>
+                            <a data-lastMenu="{{item.lastMenu}}" ui-sref="{{item.href}}" data-ng-click='clickMenuItem($event)' id="{{item.id}}">
+                                <span><i class="{{item.icon}}"></i></span>
+                                {{item.name}}
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
 
 
-        <!-- build:js({.tmp,app}) scripts/scripts.js -->
+    <div class="sidebar-filler hidden-xs"></div>
+
+    <div id="contentWrapper">
+        <div data-ui-view></div>
+    </div>
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-59636239-1', 'auto');
+    ga('send', 'pageview');
+    </script>
+
+    <!-- build:js(.) scripts/oldieshim.js -->
+    <!--[if lt IE 9]>
+    <script src="bower_components/es5-shim/es5-shim.js"></script>
+    <script src="bower_components/json3/lib/json3.js"></script>
+    <![endif]-->
+    <!-- endbuild -->
+
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/angular-aria/angular-aria.js"></script>
+    <script src="bower_components/angular-acl/angular-acl.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-busy/dist/angular-busy.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-toastr/dist/angular-toastr.tpls.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="bower_components/angular-translate/angular-translate.js"></script>
+    <script src="bower_components/satellizer/satellizer.js"></script>
+    <script src="bower_components/angular-translate-storage-cookie/angular-translate-storage-cookie.js"></script>
+    <script src="bower_components/angular-translate-storage-local/angular-translate-storage-local.js"></script>
+    <script src="bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.js"></script>
+    <script src="bower_components/angular-utils-pagination/dirPagination.js"></script>
+    <script src="bower_components/rangy/rangy-core.js"></script>
+    <script src="bower_components/rangy/rangy-classapplier.js"></script>
+    <script src="bower_components/rangy/rangy-highlighter.js"></script>
+    <script src="bower_components/rangy/rangy-selectionsaverestore.js"></script>
+    <script src="bower_components/rangy/rangy-serializer.js"></script>
+    <script src="bower_components/rangy/rangy-textrange.js"></script>
+    <script src="bower_components/textAngular/dist/textAngular.js"></script>
+    <script src="bower_components/textAngular/dist/textAngular-sanitize.js"></script>
+    <script src="bower_components/textAngular/dist/textAngularSetup.js"></script>
+    <script src="bower_components/json3/lib/json3.min.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
 
 
-        <!--***********************
-        ******* TEMPLATES JS ******
-        *************************** -->
-        <!--     Templates      --> <script src="templates.js"></script>
+    <!-- build:js({.tmp,app}) scripts/scripts.js -->
 
 
-        <!--***********************
-        ******* ANGULAR APP *******
-        *************************** -->
-        <!--      App JS        --> <script src="scripts/app.js"></script>
-
-
-
-        <!--*******************************
-        ******* ANGULAR CONTROLLERS *******
-        *********************************** -->
-        <!-- Anunturi Romanesti           -->         <script src="scripts/controllers/AnunturiRomanestiCtrl.js"></script>
-        <!-- APP Controllers   -->                 <script src="scripts/controllers/appControllers.js"></script>
-        <!-- About Me Controller        -->         <script src="scripts/controllers/BancuriAnimaleCtrl.js"></script>
-        <!-- Articles List  Controller  -->         <script src="scripts/controllers/BancuriDiverseCtrl.js"></script>
-        <!-- Article Detail  Controller -->         <script src="scripts/controllers/CulmiCtrl.js"></script>
-        <!-- Article Create Controller  -->         <script src="scripts/controllers/FactsCtrl.js"></script>
-        <!-- Portofolio Controller      -->         <script src="scripts/controllers/GhicitoriCtrl.js"></script>
-        <!-- Messages Controller        -->         <script src="scripts/controllers/GifsCtrl.js"></script>
-        <!-- Contact Controller         -->         <script src="scripts/controllers/LoginCtrl.js"></script>
-        <!-- Signup Controller          -->         <script src="scripts/controllers/ProverbeCtrl.js"></script>
-        <!-- Logout Controller          -->         <script src="scripts/controllers/SignupCtrl.js"></script>
-
-
-
-
-        <!--*******************************
-        ********** ANGULAR SERVICES *******
-        *********************************** -->
-        <!--        APP Services    -->         <script src="scripts/services/appServices.js"></script>
-
-
-        <!--*******************************
-        ********** ANGULAR DIRECTIVES *******
-        *********************************** -->
-        <!--        APP Services    -->         <script src="scripts/directives/loadingDirective.js"></script>
-
-
-        <!--*******************************
-        ********** ANGULAR FILTERS *******
-        *********************************** -->
-        <!--         APP Filters    -->         <script src="scripts/filters/filters.js"></script>
-
-
-        <!--*******************************
-        ********* ANGULAR ROUTES **********
-        *********************************** -->
-        <!--         App Routes            <script src="js/appRoutes.js"></script> -->
-
-
-        <!--*******************************
-        *********** APP CONFIG ************
-        *********************************** -->
-        <script src="scripts/appConfig.js"></script>
+    <!--***********************
+    ******* TEMPLATES JS ******
+    *************************** -->
+    <!--     Templates      --> <script src="templates.js"></script>
 
 
 
-    </body>
+    <!--*******************************
+    ******* ANGULAR CONTROLLERS *******
+    *********************************** -->
+    <!-- APP Controllers   -->                 <script src="scripts/controllers/appControllers.js"></script>
+
+    <!--*******************************
+    ********** ANGULAR SERVICES *******
+    *********************************** -->
+    <!--        APP Services    -->         <script src="scripts/services/appServices.js"></script>
+
+
+    <!--*******************************
+    ********** ANGULAR DIRECTIVES *******
+    *********************************** -->
+    <!--        APP Services    -->         <script src="scripts/directives/loadingDirective.js"></script>
+
+
+    <!--*******************************
+    ********** ANGULAR FILTERS *******
+    *********************************** -->
+    <!--         APP Filters    -->         <script src="scripts/filters/filters.js"></script>
+
+    <!--*******************************
+    ********* ANGULAR ROUTES **********
+    *********************************** -->
+    <!--         App Routes            <script src="js/appRoutes.js"></script> -->
+
+
+    <!--*******************************
+    *********** APP CONFIG ************
+    *********************************** -->
+    <script src="scripts/appConfig.js"></script>
+
+
+    <!--***********************
+    ******* ANGULAR APP *******
+    *************************** -->
+    <!--      App JS        --> <script src="scripts/app.js"></script>
+
+
+    <!-- Contact Controller         -->         <script src="scripts/controllers/LoginCtrl.js"></script>
+    <!-- Logout Controller          -->         <script src="scripts/controllers/SignupCtrl.js"></script>
+    <!-- About Me Controller        -->         <script src="scripts/controllers/BancuriAnimaleCtrl.js"></script>
+    <!-- Articles List  Controller  -->         <script src="scripts/controllers/BancuriDiverseCtrl.js"></script>
+    <!-- Article Detail  Controller -->         <script src="scripts/controllers/CulmiCtrl.js"></script>
+    <!-- Portofolio Controller      -->         <script src="scripts/controllers/GhicitoriCtrl.js"></script>
+    <!-- Anunturi Romanesti           -->         <script src="scripts/controllers/AnunturiRomanestiCtrl.js"></script>
+    <!-- Signup Controller          -->         <script src="scripts/controllers/ProverbeCtrl.js"></script>
+    <!-- Article Create Controller  -->         <script src="scripts/controllers/FactsCtrl.js"></script>
+    <!-- Messages Controller        -->         <script src="scripts/controllers/GifsCtrl.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
 </html>

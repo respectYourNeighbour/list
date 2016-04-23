@@ -20,6 +20,7 @@ angular.module('appWrapController', []).controller('appWrapController', ['$scope
 
     appWrapService.getMenu()
         .success(function(data) {
+            console.log('get menu items: ', data);
             $scope.menuItems = data[0];
     });
 
@@ -28,7 +29,7 @@ angular.module('appWrapController', []).controller('appWrapController', ['$scope
 
     //google analytics
     $scope.$on('$viewContentLoaded', function(event) {
-        console.log('event', event);
+        console.log('view content loaded: ', event);
         $window.ga('send', 'pageview', { page: $location.path() });
     });
 
@@ -71,7 +72,8 @@ angular.module('appWrapController', []).controller('appWrapController', ['$scope
     $scope.memoriseMenuRoute = [];
     $scope.memoriseMenuRouteShort = [];
     $scope.clickMenuItem = function(event) {
-        console.log('click a element ' + this);
+        console.log('click a element 1 ', this);
+        console.log('click a element 2 ', event);
         /*
             Fac clear la text input field din Search: document.getElementById('searchField').value = '';
             Fac clear si la $scope search filter: $scope.justAquery1 = '';
@@ -473,7 +475,7 @@ angular.module('DrepturileOmuluiCtrl', []).controller('DrepturileOmuluiCtrl', ['
 /**********************************
 ********** Mongodb service ********
 ***********************************/
-angular.module('Menu1Ctrl', []).controller('Menu1Controller', function($scope, appWrapService, $filter) {
+angular.module('Menu1Ctrl', []).controller('Menu1Controller', function($scope, appWrapService) {
     'use strict';
     console.log('Menu 1  Controller');
 
@@ -504,15 +506,15 @@ angular.module('Menu1Ctrl', []).controller('Menu1Controller', function($scope, a
     appWrapService.get()
         .success(function(data) {
            // $scope.definitii = data;
-           // console.dir(data);
+            console.dir(data);
 
-            $scope.en_ord = $filter('filter')(data, { categoria: 'EN-ORD' });
+            /*$scope.en_ord = $filter('filter')(data, { categoria: 'EN-ORD' });
             $scope.ett_ord = $filter('filter')(data, { categoria: 'ETT-ORD' });
             $scope.verb = $filter('filter')(data, { categoria: 'VERB' });
             $scope.verb_past_form = $filter('filter')(data, { categoria: 'VERB-PAST-FORM' });
             $scope.resor = $filter('filter')(data, { categoria: 'RESOR' });
             $scope.mat = $filter('filter')(data, { categoria: 'MAT' });
-            $scope.medicin = $filter('filter')(data, { categoria: 'MEDICIN' });
+            $scope.medicin = $filter('filter')(data, { categoria: 'MEDICIN' });*/
     });
 
 
@@ -531,7 +533,7 @@ angular.module('Menu1Ctrl', []).controller('Menu1Controller', function($scope, a
 
         appWrapService.create($scope.doc).success(function(data) {
             console.log('this is the new entry returned from the API to the Service and from the Service to the Controller: ',data[0].categoria);
-            if(data[0].categoria === $scope.categories[0].name){
+        /*    if(data[0].categoria === $scope.categories[0].name){
                 $scope.en_ord.push(data[0]);
             }
             if(data[0].categoria === $scope.categories[1].name){
@@ -552,7 +554,7 @@ angular.module('Menu1Ctrl', []).controller('Menu1Controller', function($scope, a
             }
             if(data[0].categoria === $scope.categories[6].name){
                 $scope.medicin.push(data[0]);
-            }
+            }*/
 
 
         });
@@ -597,13 +599,14 @@ angular.module('Menu1Ctrl', []).controller('Menu1Controller', function($scope, a
             console.dir('se reapeleaza dupa ce fac edit');
             appWrapService.get()
                 .success(function(data) {
-                    $scope.en_ord = $filter('filter')(data, { categoria: 'EN-ORD' });
+                    console.log(data);
+                    /*$scope.en_ord = $filter('filter')(data, { categoria: 'EN-ORD' });
                     $scope.ett_ord = $filter('filter')(data, { categoria: 'ETT-ORD' });
                     $scope.verb = $filter('filter')(data, { categoria: 'VERB' });
                     $scope.verb_past_form = $filter('filter')(data, { categoria: 'VERB-PAST-FORM' });
                     $scope.resor = $filter('filter')(data, { categoria: 'RESOR' });
                     $scope.mat = $filter('filter')(data, { categoria: 'MAT' });
-                    $scope.medicin = $filter('filter')(data, { categoria: 'MEDICIN' });
+                    $scope.medicin = $filter('filter')(data, { categoria: 'MEDICIN' });*/
             });
         });
 
@@ -630,13 +633,14 @@ angular.module('Menu1Ctrl', []).controller('Menu1Controller', function($scope, a
             //After deleting something bring again the refreshed entries from db to reflect the truth in each category;
             appWrapService.get()
                 .success(function(data) {
-                    $scope.en_ord = $filter('filter')(data, { categoria: 'EN-ORD' });
+                    console.log(data);
+                    /*$scope.en_ord = $filter('filter')(data, { categoria: 'EN-ORD' });
                     $scope.ett_ord = $filter('filter')(data, { categoria: 'ETT-ORD' });
                     $scope.verb = $filter('filter')(data, { categoria: 'VERB' });
                     $scope.verb_past_form = $filter('filter')(data, { categoria: 'VERB-PAST-FORM' });
                     $scope.resor = $filter('filter')(data, { categoria: 'RESOR' });
                     $scope.mat = $filter('filter')(data, { categoria: 'MAT' });
-                    $scope.medicin = $filter('filter')(data, { categoria: 'MEDICIN' });
+                    $scope.medicin = $filter('filter')(data, { categoria: 'MEDICIN' });*/
             });
         });
 
