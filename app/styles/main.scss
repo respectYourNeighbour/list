@@ -1,5 +1,7 @@
 $icon-font-path: "bootstrap-sass-official/assets/fonts/bootstrap/";
-$fa-font-path: "../bower_components/font-awesome/fonts";
+$fa-font-path: "../fonts/";
+
+
 
 // bower:scss
 @import "font-awesome/scss/font-awesome.scss";
@@ -60,7 +62,7 @@ $screen-lg-min: 1200px;
 /* No media query since this is the default in Bootstrap */
 body{
 	background-color: $bodyBackgroundColorMobile;
-  background-image: url('images/pattern1.png');
+  background-image: url('../images/pattern1.png');
   background-attachment: fixed;
 	font-size: 10px;
 	width: 100%;

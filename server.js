@@ -47,7 +47,7 @@ db.on('connected', function () {
     }));
 	app.use(compression());
     app.use(methodOverride('X-HTTP-Method-Override'));
-    app.use(express.static(__dirname + '/app', { maxAge: sevenDay }));
+    app.use(express.static(__dirname + '/dist', { maxAge: sevenDay }));
 
     //app.use(express.static(path.join(__dirname, 'app'),{ maxAge: sevenDay }));
 
