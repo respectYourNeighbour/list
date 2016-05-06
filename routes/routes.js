@@ -12,7 +12,7 @@ module.exports = function(app, db) {
     console.log("routes index.js");
 
     var contentHandler = new ContentHandler(db, mongodb);
-    var authenticationHandler = new AuthenticationHandler(db);   
+    var authenticationHandler = new AuthenticationHandler(db);
 
 
     /****************************************************************************************************
@@ -28,6 +28,8 @@ module.exports = function(app, db) {
     app.get('/api/getMenu', contentHandler.getMenu);
     /*ARTA - API ROUTE*/
     app.get('/api/getBancuriAnimale', contentHandler.getBancuriAnimale);
+
+
     app.get('/api/getBancuriDiverse', contentHandler.getBancuriDiverse);
     app.get('/api/getCulmi', contentHandler.getCulmi);
     app.get('/api/getGhicitori', contentHandler.getGhicitori);
@@ -36,19 +38,23 @@ module.exports = function(app, db) {
     app.get('/api/getTopCarti', contentHandler.getTopCarti);
     app.get('/api/getDesene', contentHandler.getDesene);
     app.get('/api/getFilme', contentHandler.getFilme);
+
     /*MEDIA - API ROUTE*/
     app.get('/api/getGifs', contentHandler.getGifs);
+    app.get('/api/getCoolGifs', contentHandler.getCoolGifs);
+    app.get('/api/getFailGifs', contentHandler.getFailGifs);
     app.get('/api/getMusic', contentHandler.getMusic);
     app.get('/api/getPoze', contentHandler.getPoze);
+
     /*SUFLET & MINTE - API ROUTE*/
     app.get('/api/getFacts', contentHandler.getFacts);
     app.get('/api/getCitateAristotel', contentHandler.getCitateAristotel);
-    
+
 
     /*ADD LIKES*/
     app.put('/api/addLike', contentHandler.addLike);
 
-    app.use('/api',authenticationHandler.ensureAuthenticated)
+    //app.use('/api',authenticationHandler.ensureAuthenticated)
     app.get('/api/me', contentHandler.myProfile)
 
     /****************** EXPLICATIE ***************
@@ -220,14 +226,14 @@ module.exports = function(app, db) {
 
     // API route to delete a new entry.
     app.put('/api/deletePost', function(req, res, next) {
- 
+
         console.log("req.body: ",req.body._id)
         var id = req.body._id;
 
         posts.remove({_id: new mongodb.ObjectID(id) }, function(err, removed) {
             if (err) {
                 console.log("Error processing request. Cannot find user with this id.");
-            } 
+            }
             //console.log("User has been found. Processing request ...");
             console.log("deleted",removed)
             res.json(removed)
@@ -236,7 +242,7 @@ module.exports = function(app, db) {
 
     // API route to edit a new entry.
     app.put('/api/editPost', function(req, res, next) {
- 
+
         console.log("req.body: ",req.body.obj)
 
         console.log('id: '+ req.body.obj.entryId)
@@ -244,7 +250,7 @@ module.exports = function(app, db) {
         posts.update({_id: new mongodb.ObjectID(req.body.obj.entryId) },{$set:{cuvant : req.body.obj.doc.cuvant, definitia : req.body.obj.doc.definitia, categoria : req.body.obj.doc.categoria}}, function(err, objectFound) {
             if (err) {
                 console.log("Error processing request. Cannot find user with this id.");
-            } 
+            }
             //console.log("User has been found. Processing request ...");
             console.log("objectFound",objectFound)
             res.json(objectFound)
@@ -255,7 +261,7 @@ module.exports = function(app, db) {
     /****************************************************************************************************
     ** FRONTEND ROUTES
     ** This route will handle all Angular requests.
-    ** Here we are saying: "whatever the request route is, send the ./public/index.html file" 
+    ** Here we are saying: "whatever the request route is, send the ./public/index.html file"
     ** And from inside this index.html file Angular will take over.
     ***************************************************************************************************** */
     app.get('*', function(req, res) {

@@ -1,10 +1,6 @@
 angular.module('myAngularApp', ['satellizer', 'ui.router', 'toastr', 'ngRoute', 'ngSanitize',
-    'ArtaHomeCtrl',
         'RepeatController',
     'ListeCtrl',
-        'TopCartiCtrl',
-        'TopDeseneCtrl',
-        'TopFilmeCtrl',
     'MediaCtrl',
         'YoutubeCtrl',
         'MusicCtrl',
@@ -23,8 +19,6 @@ angular.module('myAngularApp', ['satellizer', 'ui.router', 'toastr', 'ngRoute', 
     'UserService',
     'Menu1Ctrl', 'appWrapController', 'matchAccessLevel',
     'appWrapService',
-    'bancuriService',
-    'topCartiService',
     'culmiService',
     'ghicitoriService',
     'anunturiService',
@@ -33,9 +27,9 @@ angular.module('myAngularApp', ['satellizer', 'ui.router', 'toastr', 'ngRoute', 
     'musicService',
     'factsService',
     'LoginService',
-    'topDeseneService',
     'angularUtils.directives.dirPagination',
-    'appConfig'])
+    'appConfig',
+    'cgBusy'])
 
     .config(function($stateProvider, $urlRouterProvider/*, $authProvider*/) {
         'use strict';
@@ -152,7 +146,7 @@ angular.module('myAngularApp', ['satellizer', 'ui.router', 'toastr', 'ngRoute', 
                 /*TOP CARTI*/
                 .state('/category2_1', {
                     url: '/category2_1',
-                    controller: 'TopCartiCtrl',
+                    controller: 'CartiCtrl',
                     templateUrl: '/views/folder2/category2_1/category2_1.html',
                     resolve: {
 
@@ -161,7 +155,7 @@ angular.module('myAngularApp', ['satellizer', 'ui.router', 'toastr', 'ngRoute', 
                     /*CRESTINE*/
                     .state('/subcategory2_1_1', {
                         url: '/subcategory2_1_1',
-                        controller: 'TopCartiCtrl',
+                        controller: 'CartiCtrl',
                         templateUrl: '/views/folder2/category2_1/subcat_2_1_1.html',
                         resolve: {
 
@@ -170,7 +164,7 @@ angular.module('myAngularApp', ['satellizer', 'ui.router', 'toastr', 'ngRoute', 
                     /*INTERESANTE*/
                     .state('/subcategory2_1_2', {
                         url: '/subcategory2_1_2',
-                        controller: 'TopCartiCtrl',
+                        controller: 'CartiCtrl',
                         templateUrl: '/views/folder2/category2_1/subcat_2_1_2.html',
                         resolve: {
 
@@ -188,7 +182,7 @@ angular.module('myAngularApp', ['satellizer', 'ui.router', 'toastr', 'ngRoute', 
                 /*TOP FILME*/
                 .state('/category2_3', {
                     url: '/category2_3',
-                    controller: 'TopFilmeCtrl',
+                    controller: 'FilmeCtrl',
                     templateUrl: '/views/folder2/category2_3/category2_3.html',
                     resolve: {
 
@@ -215,7 +209,7 @@ angular.module('myAngularApp', ['satellizer', 'ui.router', 'toastr', 'ngRoute', 
                     /*COOL*/
                     .state('/subcategory3_1_1', {
                         url: '/subcategory3_1_1',
-                        controller: 'GifsCtrl',
+                        controller: 'GifsCoolCtrl',
                         templateUrl: '/views/folder3/category3_1/subcat_3_1_1.html',
                         resolve: {
 
@@ -224,7 +218,7 @@ angular.module('myAngularApp', ['satellizer', 'ui.router', 'toastr', 'ngRoute', 
                     /*FAIL*/
                     .state('/subcategory3_1_2', {
                         url: '/subcategory3_1_2',
-                        controller: 'GifsCtrl',
+                        controller: 'GifsFailCtrl',
                         templateUrl: '/views/folder3/category3_1/subcat_3_1_2.html',
                         resolve: {
 
@@ -510,7 +504,7 @@ angular.module('myAngularApp', ['satellizer', 'ui.router', 'toastr', 'ngRoute', 
                         }
                     });
 
-        $urlRouterProvider.otherwise('/');
+        $urlRouterProvider.otherwise('/home');
 
         /*function loginRequired($q, $location, $auth) {
             var deferred = $q.defer();

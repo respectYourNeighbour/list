@@ -1,5 +1,5 @@
 <!--GIFS FAIL-->
-<div class="container-fluid gifs">
+<div class="container-fluid gifs" cg-busy="getFailGifs">
     <div class="row">
         <div class="col-md-12 col-lg-12" style="text-align: center;">
         	<div class="col-xs-12 gifRow" dir-paginate="gif in failGifs | orderBy: orderList | filter:searchFilter | itemsPerPage: pageSize " pagination-id="gifs" current-page="currentPage" ng-controller="RepeatController">
@@ -10,9 +10,9 @@
             </div>
             <hr>
         </div>
-        
+
         <div class="text-center">
-            <dir-pagination-controls boundary-links="true" on-page-change="pageChangeHandler(newPageNumber)" pagination-id="gifs" template-url="../../libs/angular-utils-pagination/dirPagination.tpl.html"></dir-pagination-controls>
+            <dir-pagination-controls boundary-links="true" on-page-change="pageChangeHandler(newPageNumber)" pagination-id="gifs" template-url="bower_components/angular-utils-pagination/dirPagination.tpl.html"></dir-pagination-controls>
         </div>
     </div>
 </div>

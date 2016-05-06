@@ -7,9 +7,17 @@ angular.module('appWrapService', []).factory('appWrapService', ['$http', functio
             return $http.get('/api/getEntries', {cache: true});
         },
 
-        getMenu : function() {
+        /*getMenu : function() {
             return $http.get('/api/getMenu', {cache: true});
+        },*/
+
+        getMenu : function() {
+            return $http.get('../../resources/menu.json', {cache: true});
         },
+
+        /*$http.get('phones/phones.json').success(function(data) {
+            $scope.phones = data;
+        });*/
 
         // call to POST and create a new entry
         create : function(newEntry) {
@@ -33,30 +41,6 @@ angular.module('appWrapService', []).factory('appWrapService', ['$http', functio
             });
         }*/
 
-    };
-
-}]);
-
-
-angular.module('bancuriService', []).factory('bancuriService', ['$http', function($http) {
-    'use strict';
-    // each function returns a promise object
-    return {
-        // call to get all entries
-        getBancuriAnimale : function() {
-            return $http.get('/api/getBancuriAnimale', {cache: true});
-        },
-        getBancuriDiverse : function() {
-            return $http.get('/api/getBancuriDiverse', {cache: true});
-        },
-
-        //i append the end point on the server and send the id that i get from the controller
-        addLike: function(id) {
-            console.log('enters add like service');
-            return $http.put('/api/addLike', {_id: id}).success(function(data) {
-                console.log('what like'+data);
-            });
-        }
     };
 
 }]);
@@ -98,17 +82,6 @@ angular.module('anunturiService', []).factory('anunturiService', ['$http', funct
 
 }]);
 
-angular.module('topCartiService', []).factory('topCartiService', ['$http', function($http) {
-    'use strict';
-    // each function returns a promise object
-    return {
-        // call to get all entries
-        getTopCarti : function() {
-            return $http.get('/api/getTopCarti', {cache: true});
-        }
-    };
-
-}]);
 
 angular.module('gifsService', []).factory('gifsService', ['$http', function($http) {
     'use strict';
@@ -147,17 +120,6 @@ angular.module('factsService', []).factory('factsService', ['$http', function($h
 
 }]);
 
-angular.module('topDeseneService', []).factory('topDeseneService', ['$http', function($http) {
-    'use strict';
-    // each function returns a promise object
-    return {
-        // call to get all entries
-        getDesene : function() {
-            return $http.get('/api/getDesene', {cache: true});
-        }
-    };
-
-}]);
 
 // Get CITATE ARISTOTEL
 angular.module('CitateAristotelService', []).factory('CitateAristotelService', ['$http', function($http) {

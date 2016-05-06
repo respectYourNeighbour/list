@@ -18,8 +18,8 @@ function ContentHandler(db, mongodb) {
     var menu = db.collection("menu");
 
     /*ARTA*/
-    var bancuri_animale   = db.collection("bancuri_animale");
-    var bancuri_diverse   = db.collection("bancuri_diverse");
+    var bancuri_animale   = db.collection("bancuriAnimale");
+    var bancuri_diverse   = db.collection("bancuriDiverse");
     var culmi     = db.collection("culmi");
     var ghicitori = db.collection("ghicitori");
     var anunturi = db.collection("anunturi");
@@ -31,6 +31,8 @@ function ContentHandler(db, mongodb) {
 
     /*MEDIA*/
     var gifs = db.collection("gifs");
+    var coolGifs = db.collection("gifsCool");
+    var failGifs = db.collection("gifsFail");
     var music = db.collection("music");
     var poze = db.collection("poze");
 
@@ -84,6 +86,7 @@ function ContentHandler(db, mongodb) {
             res.json(items);
         });
     }
+
 
     this.getBancuriDiverse = function(req, res, next){
         bancuri_diverse.find().toArray(function(err,items) {
@@ -170,7 +173,7 @@ function ContentHandler(db, mongodb) {
 
     /*GET TOP FILME*/
     this.getFilme = function(req, res, next){
-        
+
     }
 
     /*
@@ -191,6 +194,33 @@ function ContentHandler(db, mongodb) {
             res.json(items);
         });
     }
+
+    /*GET COOL GIFS*/
+    this.getCoolGifs = function(req, res, next){
+        coolGifs.find().toArray(function(err,items) {
+            "use strict";
+            if (err) throw err;
+
+            console.log("err",err)
+            console.log("Found " + items.length + " gifs");
+
+            res.json(items);
+        });
+    }
+
+    /*GET FAIL GIFS*/
+    this.getFailGifs = function(req, res, next){
+        failGifs.find().toArray(function(err,items) {
+            "use strict";
+            if (err) throw err;
+
+            console.log("err",err)
+            console.log("Found " + items.length + " gifs");
+
+            res.json(items);
+        });
+    }
+
 
     /*GET MUSIC*/
     this.getMusic = function(req, res, next){
@@ -258,7 +288,7 @@ function ContentHandler(db, mongodb) {
         bancuri.update({_id : new mongodb.ObjectID(id)}, {$inc : {likes : 1}}, function(err, objectFound) {
             if (err) {
                 console.log("Error processing request. Cannot find user with this id.");
-            } 
+            }
             //console.log("User has been found. Processing request ...");
             console.log("added likes: ", objectFound)
             //res.json(objectFound)

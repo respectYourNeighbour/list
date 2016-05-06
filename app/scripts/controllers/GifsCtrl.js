@@ -14,7 +14,6 @@
         $scope.WelcomeMessage = 'Welcome to Gifs!';
         $scope.changeAccessLevel(31);
 
-        $scope.coolGifs = [];
         $scope.failGifs = [];
         $scope.funnyGifs = [];
         $scope.interestingGifs = [];
@@ -22,12 +21,9 @@
         $scope.wowGifs = [];
 
         gifsService.getGifs().success(function(data){
-
             for(var i=0;i<data.length;i++){
 
-                if(data[i].category === 'cool'){
-                    $scope.coolGifs.push(data[i]);
-                }else if(data[i].category === 'funny'){
+                if(data[i].category === 'funny'){
                     $scope.funnyGifs.push(data[i]);
                 }
                 else if(data[i].category === 'fail'){

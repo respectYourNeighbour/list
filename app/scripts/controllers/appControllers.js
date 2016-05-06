@@ -4,7 +4,7 @@
 angular.module('appWrapController', []).controller('appWrapController', ['$scope', '$http', '$routeParams', '$location', '$window', 'appWrapService', '$state', 'LoginService', function($scope, $http, $routeParams, $location, $window, appWrapService, $state, LoginService) {
     'use strict';
 
-    console.log('app wrap controller');
+    //console.log('app wrap controller');
 
     $scope.isAuthenticated = function() {
         //console.log('NavbarCtrl isAuthenticated',LoginService.isAuthenticated())
@@ -20,8 +20,9 @@ angular.module('appWrapController', []).controller('appWrapController', ['$scope
 
     appWrapService.getMenu()
         .success(function(data) {
-            console.log('get menu items: ', data);
-            $scope.menuItems = data[0];
+            //console.log('get menu items: ', data);
+            //$scope.menuItems = data[0];
+            $scope.menuItems = data;
     });
 
     $scope.accessLevel = 0;
@@ -47,7 +48,7 @@ angular.module('appWrapController', []).controller('appWrapController', ['$scope
     var mobileMenuButtonAnimate;
     // Document ready() !
     angular.element(document).ready(function () {
-        console.log('Document Ready from Angular');
+        //console.log('Document Ready from Angular');
         mobileMenuButton = document.querySelector('#mobileMenuBtn');
         mobileMenuButtonAnimate = document.querySelector('.menu-icon');
 
@@ -72,8 +73,8 @@ angular.module('appWrapController', []).controller('appWrapController', ['$scope
     $scope.memoriseMenuRoute = [];
     $scope.memoriseMenuRouteShort = [];
     $scope.clickMenuItem = function(event) {
-        console.log('click a element 1 ', this);
-        console.log('click a element 2 ', event);
+        //console.log('click a element 1 ', this);
+        //console.log('click a element 2 ', event);
         /*
             Fac clear la text input field din Search: document.getElementById('searchField').value = '';
             Fac clear si la $scope search filter: $scope.justAquery1 = '';
@@ -149,7 +150,7 @@ angular.module('appWrapController', []).controller('appWrapController', ['$scope
 //RepeatController Controller
 angular.module('RepeatController', []).controller('RepeatController', ['$scope', function($scope) {
     'use strict';
-    console.log('RepeatController Controller');
+    //console.log('RepeatController Controller');
 
     $scope.$watch('$index', function(index) {
       $scope.number = (index + 1) + ($scope.currentPage - 1) * $scope.pageSize;
@@ -171,19 +172,6 @@ angular.module('HomeCtrl', []).controller('HomeCtrl', ['$scope', '$routeParams',
 
 
 
-/************* MENU 1 *************
-************** Arta  **************
-***********************************/
-
-//Arta Home Controller
-angular.module('ArtaHomeCtrl', []).controller('ArtaHomeCtrl', ['$scope', function($scope) {
-    'use strict';
-    console.log('Arta Home Controller');
-    $scope.WelcomeMessage = 'Welcome to Arta Home!';
-    $scope.changeAccessLevel(1);
-}]);
-
-
 
 /************* MENU 2 *************
 ************** Liste **************
@@ -197,75 +185,6 @@ angular.module('ListeCtrl', []).controller('ListeCtrl', ['$scope', function($sco
     $scope.changeAccessLevel(2);
 }]);
 
-//Top Carti Controller
-angular.module('TopCartiCtrl', []).controller('TopCartiCtrl', ['$scope', '$log', '$filter', '$routeParams', 'topCartiService', function($scope, $log, $filter, $routeParams, topCartiService) {
-    'use strict';
-    $scope.WelcomeMessage = 'Welcome to Top Carti!';
-    $scope.changeAccessLevel(21);
-
-
-    $('body').css('backgroundColor','#FFFDE4');
-
-    $scope.cartiCrestine = [];
-    $scope.cartiInteresante = [];
-
-    topCartiService.getTopCarti().success(function(data){
-
-        for(var i=0;i<data.length;i++){
-            $scope.timeStamp = parseInt(data[i]._id.toString().substr(0,8), 16)*1000;
-            var date = new Date($scope.timeStamp);
-            data[i].data = date;
-
-            if(data[i].category === 'crestine'){
-                $scope.cartiCrestine.push(data[i]);
-            }else if(data[i].category === 'interesante'){
-                $scope.cartiInteresante.push(data[i]);
-            }
-        }
-    });
-
-
-    //Pagination definition.
-    $scope.currentPage = 1;
-    $scope.pageSize = 5;
-
-    $scope.pageChangeHandler = function(num) {
-        console.log('change to page ' + num);
-    };
-
-
-}]);
-
-//Top DESENE Controller
-angular.module('TopDeseneCtrl', []).controller('TopDeseneCtrl', ['$scope', '$log', '$filter', '$routeParams', 'topDeseneService', function($scope, $log, $filter, $routeParams, topDeseneService) {
-    'use strict';
-    console.log('Top Desene Controller');
-    $scope.WelcomeMessage = 'Welcome to Top Desene!';
-
-
-    $scope.desene = [];
-
-    topDeseneService.getDesene().success(function(data){
-
-        for(var i=0;i<data.length;i++){
-            $scope.timeStamp = parseInt(data[i]._id.toString().substr(0,8), 16)*1000;
-            var date = new Date($scope.timeStamp);
-            data[i].data = date;
-
-            $scope.desene.push(data[i]);
-            console.log($scope.desene);
-        }
-    });
-
-
-    //Pagination definition.
-    $scope.currentPage = 1;
-    $scope.pageSize = 100;
-
-    $scope.pageChangeHandler = function(num) {
-        console.log('change to page ' + num);
-    };
-}]);
 
 //Top Filme Controller
 angular.module('TopFilmeCtrl', []).controller('TopFilmeCtrl', ['$scope', function($scope) {
