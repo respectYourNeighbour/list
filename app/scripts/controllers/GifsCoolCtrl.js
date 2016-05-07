@@ -9,7 +9,6 @@
     'use strict';
 
     function GifsCoolCtrl($scope, $filter, GifsService){
-        console.log('Gifs Cool Controller');
         $scope.changeAccessLevel(31);
         $scope.currentPage = 1;
         $scope.pageSize = 5;
@@ -19,7 +18,6 @@
         };
 
         $scope.getCoolGifs = GifsService.getCoolGifs().success(function(data){
-            console.log('cool gifs: ', data);
             $scope.coolGifs = data;
         });
 

@@ -30,14 +30,21 @@ function ContentHandler(db, mongodb) {
     var filme = db.collection("filme");
 
     /*MEDIA*/
-    var gifs = db.collection("gifs");
     var coolGifs = db.collection("gifsCool");
     var failGifs = db.collection("gifsFail");
+    var funnyGifs = db.collection("gifsFunny");
+    var interestingGifs = db.collection("gifsInteresting");
+    var wowGifs = db.collection("gifsWow");
+    var reactionGifs = db.collection("gifsReaction");
+
+
     var music = db.collection("music");
     var poze = db.collection("poze");
 
     /*SUFLET & MINTE*/
     var facts = db.collection("facts");
+
+    var citateAbrahamLincoln = db.collection("citateAbrahamLincoln");
     var citateAristotel = db.collection("citateAristotel");
 
 
@@ -182,19 +189,6 @@ function ContentHandler(db, mongodb) {
      |--------------------------------------------------------------------------
      */
 
-    /*GET GIFS*/
-    this.getGifs = function(req, res, next){
-        gifs.find().toArray(function(err,items) {
-            "use strict";
-            if (err) throw err;
-
-            console.log("err",err)
-            console.log("Found " + items.length + " gifs");
-
-            res.json(items);
-        });
-    }
-
     /*GET COOL GIFS*/
     this.getCoolGifs = function(req, res, next){
         coolGifs.find().toArray(function(err,items) {
@@ -211,6 +205,58 @@ function ContentHandler(db, mongodb) {
     /*GET FAIL GIFS*/
     this.getFailGifs = function(req, res, next){
         failGifs.find().toArray(function(err,items) {
+            "use strict";
+            if (err) throw err;
+
+            console.log("err",err)
+            console.log("Found " + items.length + " gifs");
+
+            res.json(items);
+        });
+    }
+
+    /*GET FUNNY GIFS*/
+    this.getFunnyGifs = function(req, res, next){
+        funnyGifs.find().toArray(function(err,items) {
+            "use strict";
+            if (err) throw err;
+
+            console.log("err",err)
+            console.log("Found " + items.length + " gifs");
+
+            res.json(items);
+        });
+    }
+
+    /*GET INTERESTING GIFS*/
+    this.getInterestingGifs = function(req, res, next){
+        interestingGifs.find().toArray(function(err,items) {
+            "use strict";
+            if (err) throw err;
+
+            console.log("err",err)
+            console.log("Found " + items.length + " gifs");
+
+            res.json(items);
+        });
+    }
+
+    /*GET WOW GIFS*/
+    this.getWowGifs = function(req, res, next){
+        wowGifs.find().toArray(function(err,items) {
+            "use strict";
+            if (err) throw err;
+
+            console.log("err",err)
+            console.log("Found " + items.length + " gifs");
+
+            res.json(items);
+        });
+    }
+
+    /*GET REACTION GIFS*/
+    this.getReactionGifs = function(req, res, next){
+        reactionGifs.find().toArray(function(err,items) {
             "use strict";
             if (err) throw err;
 
@@ -260,9 +306,22 @@ function ContentHandler(db, mongodb) {
         });
     }
 
-    /*GET FACTS*/
+    /*GET CITATE ARISTOTEL*/
     this.getCitateAristotel = function(req, res, next){
         citateAristotel.find().toArray(function(err,items) {
+            "use strict";
+            if (err) throw err;
+
+            console.log("err",err)
+            console.log("Found " + items.length + " citate");
+
+            res.json(items);
+        });
+    }
+
+    /*GET CITATE ARISTOTEL*/
+    this.getCitateAbrahamLincoln = function(req, res, next){
+        citateAbrahamLincoln.find().toArray(function(err,items) {
             "use strict";
             if (err) throw err;
 

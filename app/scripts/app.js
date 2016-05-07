@@ -22,7 +22,6 @@ angular.module('myAngularApp', ['satellizer', 'ui.router', 'toastr', 'ngRoute', 
     'culmiService',
     'ghicitoriService',
     'anunturiService',
-    'gifsService',
     'CitateAristotelService',
     'musicService',
     'factsService',
@@ -200,7 +199,6 @@ angular.module('myAngularApp', ['satellizer', 'ui.router', 'toastr', 'ngRoute', 
                 /*GIFS*/
                 .state('/category3_1', {
                     url: '/category3_1',
-                    controller: 'GifsCtrl',
                     templateUrl: '/views/folder3/category3_1/category3_1.html',
                     resolve: {
 
@@ -227,7 +225,7 @@ angular.module('myAngularApp', ['satellizer', 'ui.router', 'toastr', 'ngRoute', 
                     /*FUNNY*/
                     .state('/subcategory3_1_3', {
                         url: '/subcategory3_1_3',
-                        controller: 'GifsCtrl',
+                        controller: 'GifsFunnyCtrl',
                         templateUrl: '/views/folder3/category3_1/subcat_3_1_3.html',
                         resolve: {
 
@@ -236,7 +234,7 @@ angular.module('myAngularApp', ['satellizer', 'ui.router', 'toastr', 'ngRoute', 
                     /*INTERESTING*/
                     .state('/subcategory3_1_4', {
                         url: '/subcategory3_1_4',
-                        controller: 'GifsCtrl',
+                        controller: 'GifsInterestingCtrl',
                         templateUrl: '/views/folder3/category3_1/subcat_3_1_4.html',
                         resolve: {
 
@@ -245,7 +243,7 @@ angular.module('myAngularApp', ['satellizer', 'ui.router', 'toastr', 'ngRoute', 
                     /*WOW*/
                     .state('/subcategory3_1_5', {
                         url: '/subcategory3_1_5',
-                        controller: 'GifsCtrl',
+                        controller: 'GifsWowCtrl',
                         templateUrl: '/views/folder3/category3_1/subcat_3_1_5.html',
                         resolve: {
 
@@ -254,7 +252,7 @@ angular.module('myAngularApp', ['satellizer', 'ui.router', 'toastr', 'ngRoute', 
                     /*REACTION*/
                     .state('/subcategory3_1_6', {
                         url: '/subcategory3_1_6',
-                        controller: 'GifsCtrl',
+                        controller: 'GifsReactionCtrl',
                         templateUrl: '/views/folder3/category3_1/subcat_3_1_6.html',
                         resolve: {
 
@@ -371,16 +369,16 @@ angular.module('myAngularApp', ['satellizer', 'ui.router', 'toastr', 'ngRoute', 
                     /*ABRAHAM LINCOLN*/
                     .state('/category4_2_1', {
                         url: '/category4_2_1',
-                        controller: 'CitateCtrl',
+                        controller: 'AbrahamLincolnCtrl',
                         templateUrl: '/views/folder4/category4_2/category4_2_1.html',
                         resolve: {
 
                         }
                     })
-                    /*ABRAHAM LINCOLN*/
+                    /*ALBERT EINSTEIN*/
                     .state('/category4_2_2', {
                         url: '/category4_2_2',
-                        controller: 'CitateCtrl',
+                        controller: 'AlbertEinsteinCtrl',
                         templateUrl: '/views/folder4/category4_2/category4_2_2.html',
                         resolve: {
 
@@ -389,8 +387,359 @@ angular.module('myAngularApp', ['satellizer', 'ui.router', 'toastr', 'ngRoute', 
                     /*ARISTOTEL*/
                     .state('/category4_2_3', {
                         url: '/category4_2_3',
-                        controller: 'CitateAristotelCtrl',
+                        controller: 'AristotelCtrl',
                         templateUrl: '/views/folder4/category4_2/category4_2_3.html',
+                        resolve: {
+
+                        }
+                    })
+                    /*BENJAMIN FRANKLIN*/
+                    .state('/category4_2_4', {
+                        url: '/category4_2_4',
+                        controller: 'BenjaminFranklinCtrl',
+                        templateUrl: '/views/folder4/category4_2/category4_2_4.html',
+                        resolve: {
+
+                        }
+                    })
+                    /*BUDDHA*/
+                    .state('/category4_2_5', {
+                        url: '/category4_2_5',
+                        controller: 'BuddhaCtrl',
+                        templateUrl: '/views/folder4/category4_2/category4_2_5.html',
+                        resolve: {
+
+                        }
+                    })
+                    /*Charles Dickens*/
+                    .state('/category4_2_6', {
+                        url: '/category4_2_6',
+                        controller: 'CharlesDickensCtrl',
+                        templateUrl: '/views/folder4/category4_2/category4_2_6.html',
+                        resolve: {
+
+                        }
+                    })
+                    /*Confucius*/
+                    .state('/category4_2_7', {
+                        url: '/category4_2_7',
+                        controller: 'ConfuciusCtrl',
+                        templateUrl: '/views/folder4/category4_2/category4_2_7.html',
+                        resolve: {
+
+                        }
+                    })
+                    /*Dalai Lama*/
+                    .state('/category4_2_8', {
+                        url: '/category4_2_8',
+                        controller: 'DalaiLamaCtrl',
+                        templateUrl: '/views/folder4/category4_2/category4_2_8.html',
+                        resolve: {
+
+                        }
+                    })
+                    /*Democrit*/
+                    .state('/category4_2_9', {
+                        url: '/category4_2_9',
+                        controller: 'DemocritCtrl',
+                        templateUrl: '/views/folder4/category4_2/category4_2_9.html',
+                        resolve: {
+
+                        }
+                    })
+                    /*Euripide*/
+                    .state('/category4_2_10', {
+                        url: '/category4_2_10',
+                        controller: 'EuripideCtrl',
+                        templateUrl: '/views/folder4/category4_2/category4_2_10.html',
+                        resolve: {
+
+                        }
+                    })
+                    /*George Bernard Shaw*/
+                    .state('/category4_2_11', {
+                        url: '/category4_2_11',
+                        controller: 'GeorgeBernardShawCtrl',
+                        templateUrl: '/views/folder4/category4_2/category4_2_11.html',
+                        resolve: {
+
+                        }
+                    })
+                    /*George Washington*/
+                    .state('/category4_2_12', {
+                        url: '/category4_2_12',
+                        controller: 'GeorgeWashingtonCtrl',
+                        templateUrl: '/views/folder4/category4_2/category4_2_12.html',
+                        resolve: {
+
+                        }
+                    })
+                    /*Immanuel Kant*/
+                    .state('/category4_2_13', {
+                        url: '/category4_2_13',
+                        controller: 'ImmanuelKantCtrl',
+                        templateUrl: '/views/folder4/category4_2/category4_2_13.html',
+                        resolve: {
+
+                        }
+                    })
+                    /*Lao Tzu*/
+                    .state('/category4_2_14', {
+                        url: '/category4_2_14',
+                        controller: 'LaoTzuCtrl',
+                        templateUrl: '/views/folder4/category4_2/category4_2_14.html',
+                        resolve: {
+
+                        }
+                    })
+                    /*Lucius Annaeus Seneca*/
+                    .state('/category4_2_15', {
+                        url: '/category4_2_15',
+                        controller: 'LuciusAnnaeusSenecaCtrl',
+                        templateUrl: '/views/folder4/category4_2/category4_2_15.html',
+                        resolve: {
+
+                        }
+                    })
+                    /*Mahatma Gandhi*/
+                    .state('/category4_2_16', {
+                        url: '/category4_2_16',
+                        controller: 'MahatmaGandhiCtrl',
+                        templateUrl: '/views/folder4/category4_2/category4_2_16.html',
+                        resolve: {
+
+                        }
+                    })
+                    /*Maica Tereza*/
+                    .state('/category4_2_17', {
+                        url: '/category4_2_17',
+                        controller: 'MaicaTerezaCtrl',
+                        templateUrl: '/views/folder4/category4_2/category4_2_17.html',
+                        resolve: {
+
+                        }
+                    })
+                    /*Mark Twain*/
+                    .state('/category4_2_18', {
+                        url: '/category4_2_18',
+                        controller: 'MarkTwainCtrl',
+                        templateUrl: '/views/folder4/category4_2/category4_2_18.html',
+                        resolve: {
+
+                        }
+                    })
+                    /*Martin Luther King Jr*/
+                    .state('/category4_2_19', {
+                        url: '/category4_2_19',
+                        controller: 'MartinLutherKingJrCtrl',
+                        templateUrl: '/views/folder4/category4_2/category4_2_19.html',
+                        resolve: {
+
+                        }
+                    })
+                    /*Napoleon Bonaparte*/
+                    .state('/category4_2_20', {
+                        url: '/category4_2_20',
+                        controller: 'NapoleonBonaparteCtrl',
+                        templateUrl: '/views/folder4/category4_2/category4_2_20.html',
+                        resolve: {
+
+                        }
+                    })
+                    /*Neale Donald Walsh*/
+                    .state('/category4_2_21', {
+                        url: '/category4_2_21',
+                        controller: 'NealeDonaldWalshCtrl',
+                        templateUrl: '/views/folder4/category4_2/category4_2_21.html',
+                        resolve: {
+
+                        }
+                    })
+                    /*Oscar Wilde*/
+                    .state('/category4_2_22', {
+                        url: '/category4_2_22',
+                        controller: 'OscarWildeCtrl',
+                        templateUrl: '/views/folder4/category4_2/category4_2_22.html',
+                        resolve: {
+
+                        }
+                    })
+                    /*Pablo Picasso*/
+                    .state('/category4_2_23', {
+                        url: '/category4_2_23',
+                        controller: 'PabloPicassoCtrl',
+                        templateUrl: '/views/folder4/category4_2/category4_2_23.html',
+                        resolve: {
+
+                        }
+                    })
+                    /*Platon*/
+                    .state('/category4_2_24', {
+                        url: '/category4_2_24',
+                        controller: 'PlatonCtrl',
+                        templateUrl: '/views/folder4/category4_2/category4_2_24.html',
+                        resolve: {
+
+                        }
+                    })
+                    /*Publilius Syrus*/
+                    .state('/category4_2_25', {
+                        url: '/category4_2_25',
+                        controller: 'PubliliusSyrusCtrl',
+                        templateUrl: '/views/folder4/category4_2/category4_2_25.html',
+                        resolve: {
+
+                        }
+                    })
+                    /*Ralph Waldo Emerson*/
+                    .state('/category4_2_26', {
+                        url: '/category4_2_26',
+                        controller: 'RalphWaldoEmersonCtrl',
+                        templateUrl: '/views/folder4/category4_2/category4_2_26.html',
+                        resolve: {
+
+                        }
+                    })
+                    /*Richard Wurmbrand*/
+                    .state('/category4_2_27', {
+                        url: '/category4_2_27',
+                        controller: 'RichardWurmbrandCtrl',
+                        templateUrl: '/views/folder4/category4_2/category4_2_27.html',
+                        resolve: {
+
+                        }
+                    })
+                    /*Sfantul Augustin*/
+                    .state('/category4_2_28', {
+                        url: '/category4_2_28',
+                        controller: 'SfantulAugustinCtrl',
+                        templateUrl: '/views/folder4/category4_2/category4_2_28.html',
+                        resolve: {
+
+                        }
+                    })
+                    /*Sfantul Ciprian*/
+                    .state('/category4_2_29', {
+                        url: '/category4_2_29',
+                        controller: 'SfantulCiprianCtrl',
+                        templateUrl: '/views/folder4/category4_2/category4_2_29.html',
+                        resolve: {
+
+                        }
+                    })
+                    /*Sfantul Ioan Gura De Aur*/
+                    .state('/category4_2_30', {
+                        url: '/category4_2_30',
+                        controller: 'SfantulIoanGuraDeAurCtrl',
+                        templateUrl: '/views/folder4/category4_2/category4_2_30.html',
+                        resolve: {
+
+                        }
+                    })
+                    /*Sfantul Ioan Scararul*/
+                    .state('/category4_2_31', {
+                        url: '/category4_2_31',
+                        controller: 'SfantulIoanScararulCtrl',
+                        templateUrl: '/views/folder4/category4_2/category4_2_31.html',
+                        resolve: {
+
+                        }
+                    })
+                    /*Sfantul Irineu*/
+                    .state('/category4_2_32', {
+                        url: '/category4_2_32',
+                        controller: 'SfantulIrineuCtrl',
+                        templateUrl: '/views/folder4/category4_2/category4_2_32.html',
+                        resolve: {
+
+                        }
+                    })
+                    /*Sfantul Petru*/
+                    .state('/category4_2_33', {
+                        url: '/category4_2_33',
+                        controller: 'SfantulPetruCtrl',
+                        templateUrl: '/views/folder4/category4_2/category4_2_33.html',
+                        resolve: {
+
+                        }
+                    })
+                    /*Simeon Noul Teolog*/
+                    .state('/category4_2_34', {
+                        url: '/category4_2_34',
+                        controller: 'SimeonNoulTeologCtrl',
+                        templateUrl: '/views/folder4/category4_2/category4_2_34.html',
+                        resolve: {
+
+                        }
+                    })
+                    /*Socrate*/
+                    .state('/category4_2_35', {
+                        url: '/category4_2_35',
+                        controller: 'SocrateCtrl',
+                        templateUrl: '/views/folder4/category4_2/category4_2_35.html',
+                        resolve: {
+
+                        }
+                    })
+                    /*Steven Wright*/
+                    .state('/category4_2_36', {
+                        url: '/category4_2_36',
+                        controller: 'StevenWrightCtrl',
+                        templateUrl: '/views/folder4/category4_2/category4_2_36.html',
+                        resolve: {
+
+                        }
+                    })
+                    /*Sun Tzu*/
+                    .state('/category4_2_37', {
+                        url: '/category4_2_37',
+                        controller: 'SunTzuCtrl',
+                        templateUrl: '/views/folder4/category4_2/category4_2_37.html',
+                        resolve: {
+
+                        }
+                    })
+                    /*Thomas Jefferson*/
+                    .state('/category4_2_38', {
+                        url: '/category4_2_38',
+                        controller: 'ThomasJeffersonCtrl',
+                        templateUrl: '/views/folder4/category4_2/category4_2_38.html',
+                        resolve: {
+
+                        }
+                    })
+                    /*Vasile Cel Mare*/
+                    .state('/category4_2_39', {
+                        url: '/category4_2_39',
+                        controller: 'VasileCelMareCtrl',
+                        templateUrl: '/views/folder4/category4_2/category4_2_39.html',
+                        resolve: {
+
+                        }
+                    })
+                    /*William Shakespeare*/
+                    .state('/category4_2_40', {
+                        url: '/category4_2_40',
+                        controller: 'WilliamShakespeareCtrl',
+                        templateUrl: '/views/folder4/category4_2/category4_2_40.html',
+                        resolve: {
+
+                        }
+                    })
+                    /*Winston Churchill*/
+                    .state('/category4_2_41', {
+                        url: '/category4_2_41',
+                        controller: 'WinstonChurchillCtrl',
+                        templateUrl: '/views/folder4/category4_2/category4_2_41.html',
+                        resolve: {
+
+                        }
+                    })
+                    /*Alte Citate*/
+                    .state('/category4_2_42', {
+                        url: '/category4_2_42',
+                        controller: 'AlteCitateCtrl',
+                        templateUrl: '/views/folder4/category4_2/category4_2_42.html',
                         resolve: {
 
                         }

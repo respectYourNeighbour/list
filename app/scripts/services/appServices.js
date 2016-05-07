@@ -83,19 +83,6 @@ angular.module('anunturiService', []).factory('anunturiService', ['$http', funct
 }]);
 
 
-angular.module('gifsService', []).factory('gifsService', ['$http', function($http) {
-    'use strict';
-    // each function returns a promise object
-    return {
-        // call to get all entries
-        getGifs : function() {
-            return $http.get('/api/getGifs', {cache: true});
-        }
-    };
-
-}]);
-
-
 angular.module('musicService', []).factory('musicService', ['$http', function($http) {
     'use strict';
     // each function returns a promise object

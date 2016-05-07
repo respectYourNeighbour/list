@@ -40,15 +40,20 @@ module.exports = function(app, db) {
     app.get('/api/getFilme', contentHandler.getFilme);
 
     /*MEDIA - API ROUTE*/
-    app.get('/api/getGifs', contentHandler.getGifs);
     app.get('/api/getCoolGifs', contentHandler.getCoolGifs);
     app.get('/api/getFailGifs', contentHandler.getFailGifs);
+    app.get('/api/getFunnyGifs', contentHandler.getFunnyGifs);
+    app.get('/api/getInterestingGifs', contentHandler.getInterestingGifs);
+    app.get('/api/getWowGifs', contentHandler.getWowGifs);
+    app.get('/api/getReactionGifs', contentHandler.getReactionGifs);
+
     app.get('/api/getMusic', contentHandler.getMusic);
     app.get('/api/getPoze', contentHandler.getPoze);
 
     /*SUFLET & MINTE - API ROUTE*/
     app.get('/api/getFacts', contentHandler.getFacts);
     app.get('/api/getCitateAristotel', contentHandler.getCitateAristotel);
+    app.get('/api/getCitateAbrahamLincoln', contentHandler.getCitateAbrahamLincoln);
 
 
     /*ADD LIKES*/

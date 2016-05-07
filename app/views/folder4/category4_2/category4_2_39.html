@@ -1,0 +1,30 @@
+<!-- Thomas Jefferson -->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xs-12">
+            <p class="white-txt-shadow-effect">Thomas Jefferson</p>
+        </div>
+    </div>
+    <hr>
+    <br>
+    <div class="row">
+        <div class="col-md-12 col-lg-10 col-lg-offset-1">
+            <div class="bn-box bn-sepia" dir-paginate="citat in citate | filter:searchFilter | itemsPerPage: pageSize " pagination-id="culmiPaginateId" current-page="currentPage" ng-controller="RepeatController">
+                <div class="bn-box-content" >
+                    <!-- <p><strong ng-bind-html="banc.name" ></strong></p> -->
+                    <div>
+                        <span class="bancNr">{{number}}</span>
+                        <p ng-bind-html="citat.citat"></p>
+                        <hr>
+                        <p style="text-align: right;"><b>{{citat.autor}}</b></p>
+                    </div>
+                </div>
+            </div>
+            <hr>
+        </div>
+
+        <div class="text-center">
+            <dir-pagination-controls boundary-links="true" on-page-change="pageChangeHandler(newPageNumber)" pagination-id="culmiPaginateId" template-url="bower_components/angular-utils-pagination/dirPagination.tpl.html"></dir-pagination-controls>
+        </div>
+    </div>
+</div>

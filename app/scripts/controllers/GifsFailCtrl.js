@@ -9,7 +9,6 @@
     'use strict';
 
     function GifsFailCtrl($scope, $filter, GifsService){
-        console.log('Gifs Fail Controller');
         $scope.changeAccessLevel(31);
         $scope.currentPage = 1;
         $scope.pageSize = 5;
@@ -19,7 +18,6 @@
         };
 
         $scope.getFailGifs = GifsService.getFailGifs().success(function(data){
-            console.log('cool gifs: ', data);
             $scope.failGifs = data;
         });
 
