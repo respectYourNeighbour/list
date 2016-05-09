@@ -12,12 +12,13 @@
         console.log('Facts Controller');
         $scope.WelcomeMessage = 'Welcome to Facts!';
 
-        $scope.facts = [];
+        //$scope.facts = [];
 
-        factsService.getFacts().success(function(data){
-            for(var i=0;i<data.length;i++){
+        $scope.getFacts = factsService.getFacts().success(function(data){
+            $scope.facts = data;
+            /*for(var i=0;i<data.length;i++){
                 $scope.facts.push(data[i]);
-            }
+            }*/
         });
 
 

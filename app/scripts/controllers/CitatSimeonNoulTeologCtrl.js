@@ -8,7 +8,7 @@
 (function() {
     'use strict';
 
-    function SimeonNoulTeologCtrl($scope, $filter, CitateService){
+    function SfantulSimeonNoulTeologCtrl($scope, $filter, CitateService){
         $scope.changeAccessLevel(42);
         $scope.currentPage = 1;
         $scope.pageSize = 10;
@@ -17,7 +17,7 @@
             //console.log('change to page ' + num);
         };
 
-        $scope.getCitate = CitateService.getCitateSimeonNoulTeolog().success(function(data){
+        $scope.getCitate = CitateService.getCitateSfantulSimeonNoulTeolog().success(function(data){
             $scope.citate = data;
         });
 
@@ -26,5 +26,5 @@
 
     angular
         .module('myAngularApp')
-        .controller('SimeonNoulTeologCtrl', ['$scope', '$filter', 'CitateService', SimeonNoulTeologCtrl]);
+        .controller('SfantulSimeonNoulTeologCtrl', ['$scope', '$filter', 'CitateService', SfantulSimeonNoulTeologCtrl]);
 })();

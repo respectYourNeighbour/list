@@ -52,8 +52,50 @@ module.exports = function(app, db) {
 
     /*SUFLET & MINTE - API ROUTE*/
     app.get('/api/getFacts', contentHandler.getFacts);
-    app.get('/api/getCitateAristotel', contentHandler.getCitateAristotel);
+
     app.get('/api/getCitateAbrahamLincoln', contentHandler.getCitateAbrahamLincoln);
+    app.get('/api/getCitateAlbertEinstein', contentHandler.getCitateAlbertEinstein);
+    app.get('/api/getCitateAristotel', contentHandler.getCitateAristotel);
+    app.get('/api/getCitateBenjaminFranklin', contentHandler.getCitateBenjaminFranklin);
+    app.get('/api/getCitateBuddha', contentHandler.getCitateBuddha);
+    app.get('/api/getCitateCharlesDickens', contentHandler.getCitateCharlesDickens);
+    app.get('/api/getCitateConfucius', contentHandler.getCitateConfucius);
+    app.get('/api/getCitateDalaiLama', contentHandler.getCitateDalaiLama);
+    app.get('/api/getCitateDemocrit', contentHandler.getCitateDemocrit);
+    app.get('/api/getCitateEuripide', contentHandler.getCitateEuripide);
+    app.get('/api/getCitateGeorgeBernardShaw', contentHandler.getCitateGeorgeBernardShaw);
+    app.get('/api/getCitateGeorgeWashington', contentHandler.getCitateGeorgeWashington);
+    app.get('/api/getCitateImmanuelKant', contentHandler.getCitateImmanuelKant);
+    app.get('/api/getCitateLaoTzu', contentHandler.getCitateLaoTzu);
+    app.get('/api/getCitateLuciusAnnaeusSeneca', contentHandler.getCitateLuciusAnnaeusSeneca);
+    app.get('/api/getCitateMahatmaGandhi', contentHandler.getCitateMahatmaGandhi);
+    app.get('/api/getCitateMaicaTereza', contentHandler.getCitateMaicaTereza);
+    app.get('/api/getCitateMarkTwain', contentHandler.getCitateMarkTwain);
+    app.get('/api/getCitateMartinLutherKingJr', contentHandler.getCitateMartinLutherKingJr);
+    app.get('/api/getCitateNapoleonBonaparte', contentHandler.getCitateNapoleonBonaparte);
+    app.get('/api/getCitateNealeDonaldWalsh', contentHandler.getCitateNealeDonaldWalsh);
+    app.get('/api/getCitateOscarWilde', contentHandler.getCitateOscarWilde);
+    app.get('/api/getCitatePabloPicasso', contentHandler.getCitatePabloPicasso);
+    app.get('/api/getCitatePlaton', contentHandler.getCitatePlaton);
+    app.get('/api/getCitatePubliliusSyrus', contentHandler.getCitatePubliliusSyrus);
+    app.get('/api/getCitateRalphWaldoEmerson', contentHandler.getCitateRalphWaldoEmerson);
+    app.get('/api/getCitateRichardWurmbrand', contentHandler.getCitateRichardWurmbrand);
+    app.get('/api/getCitateSfantulAugustin', contentHandler.getCitateSfantulAugustin);
+    app.get('/api/getCitateSfantulCiprian', contentHandler.getCitateSfantulCiprian);
+    app.get('/api/getCitateSfantulIoanGuraDeAur', contentHandler.getCitateSfantulIoanGuraDeAur);
+    app.get('/api/getCitateSfantulIoanScararul', contentHandler.getCitateSfantulIoanScararul);
+    app.get('/api/getCitateSfantulIrineu', contentHandler.getCitateSfantulIrineu);
+    app.get('/api/getCitateSfantulPetru', contentHandler.getCitateSfantulPetru);
+    app.get('/api/getCitateSfantulSimeonNoulTeolog', contentHandler.getCitateSfantulSimeonNoulTeolog);
+    app.get('/api/getCitateSfantulVasileCelMare', contentHandler.getCitateSfantulVasileCelMare);
+    app.get('/api/getCitateSocrates', contentHandler.getCitateSocrates);
+    app.get('/api/getCitateStevenWright', contentHandler.getCitateStevenWright);
+    app.get('/api/getCitateSunTzu', contentHandler.getCitateSunTzu);
+    app.get('/api/getCitateThomasJefferson', contentHandler.getCitateThomasJefferson);
+    app.get('/api/getCitateWilliamShakespeare', contentHandler.getCitateWilliamShakespeare);
+    app.get('/api/getCitateWinstonChurchill', contentHandler.getCitateWinstonChurchill);
+    app.get('/api/getCitateAlteCitate', contentHandler.getCitateAlteCitate);
+
 
 
     /*ADD LIKES*/

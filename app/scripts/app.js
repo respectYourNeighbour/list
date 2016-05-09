@@ -666,7 +666,7 @@ angular.module('myAngularApp', ['satellizer', 'ui.router', 'toastr', 'ngRoute', 
                     /*Simeon Noul Teolog*/
                     .state('/category4_2_34', {
                         url: '/category4_2_34',
-                        controller: 'SimeonNoulTeologCtrl',
+                        controller: 'SfantulSimeonNoulTeologCtrl',
                         templateUrl: '/views/folder4/category4_2/category4_2_34.html',
                         resolve: {
 
@@ -675,7 +675,7 @@ angular.module('myAngularApp', ['satellizer', 'ui.router', 'toastr', 'ngRoute', 
                     /*Socrate*/
                     .state('/category4_2_35', {
                         url: '/category4_2_35',
-                        controller: 'SocrateCtrl',
+                        controller: 'SfantulVasileCelMareCtrl',
                         templateUrl: '/views/folder4/category4_2/category4_2_35.html',
                         resolve: {
 
@@ -684,7 +684,7 @@ angular.module('myAngularApp', ['satellizer', 'ui.router', 'toastr', 'ngRoute', 
                     /*Steven Wright*/
                     .state('/category4_2_36', {
                         url: '/category4_2_36',
-                        controller: 'StevenWrightCtrl',
+                        controller: 'SocrateCtrl',
                         templateUrl: '/views/folder4/category4_2/category4_2_36.html',
                         resolve: {
 
@@ -693,7 +693,7 @@ angular.module('myAngularApp', ['satellizer', 'ui.router', 'toastr', 'ngRoute', 
                     /*Sun Tzu*/
                     .state('/category4_2_37', {
                         url: '/category4_2_37',
-                        controller: 'SunTzuCtrl',
+                        controller: 'StevenWrightCtrl',
                         templateUrl: '/views/folder4/category4_2/category4_2_37.html',
                         resolve: {
 
@@ -702,7 +702,7 @@ angular.module('myAngularApp', ['satellizer', 'ui.router', 'toastr', 'ngRoute', 
                     /*Thomas Jefferson*/
                     .state('/category4_2_38', {
                         url: '/category4_2_38',
-                        controller: 'ThomasJeffersonCtrl',
+                        controller: 'SunTzuCtrl',
                         templateUrl: '/views/folder4/category4_2/category4_2_38.html',
                         resolve: {
 
@@ -711,7 +711,7 @@ angular.module('myAngularApp', ['satellizer', 'ui.router', 'toastr', 'ngRoute', 
                     /*Vasile Cel Mare*/
                     .state('/category4_2_39', {
                         url: '/category4_2_39',
-                        controller: 'VasileCelMareCtrl',
+                        controller: 'ThomasJeffersonCtrl',
                         templateUrl: '/views/folder4/category4_2/category4_2_39.html',
                         resolve: {
 

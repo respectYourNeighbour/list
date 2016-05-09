@@ -8,22 +8,30 @@
 (function() {
     'use strict';
 
-    function GhicitoriCtrl($scope, $log, $filter, $routeParams, ghicitoriService) {
-        console.log('Ghicitori Controller');
+    function GhicitoriCtrl($scope, ghicitoriService) {
+        //console.log('--Ghicitori Controller');
         $scope.WelcomeMessage = 'Welcome to Ghicitori!';
+        $scope.answer = false;
 
-        $scope.ghicitori = [];
+        //$scope.ghicitori = [];
 
-        ghicitoriService.getGhicitori().success(function(data){
+        $scope.showAnswer = function() {
+            //console.log('click answer');
+            $scope.answer = !$scope.answer;
+        };
 
-            for(var i=0;i<data.length;i++){
+        $scope.getGhicitori = ghicitoriService.getGhicitori().success(function(data){
+            $scope.ghicitori = data;
+            /*for(var i=0;i<data.length;i++){
                 $scope.timeStamp = parseInt(data[i]._id.toString().substr(0,8), 16)*1000;
                 var date = new Date($scope.timeStamp);
                 data[i].data = date;
 
                 $scope.ghicitori.push(data[i]);
-            }
+            }*/
         });
+
+
 
 
         //Pagination definition.
@@ -37,5 +45,5 @@
 
     angular
         .module('myAngularApp')
-        .controller('GhicitoriCtrl', ['$scope', '$log', '$filter', '$routeParams', 'ghicitoriService', GhicitoriCtrl]);
+        .controller('GhicitoriCtrl', ['$scope', 'ghicitoriService', GhicitoriCtrl]);
 })();

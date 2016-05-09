@@ -12,17 +12,18 @@
         console.log('Culmi Controller');
         $scope.WelcomeMessage = 'Welcome to Culmi!';
 
-        $scope.culmi = [];
+        //$scope.culmi = [];
 
-        culmiService.getCulmi().success(function(data){
+        $scope.getCulmi = culmiService.getCulmi().success(function(data){
+            $scope.culmi = data;
 
-            for(var i=0;i<data.length;i++){
+            /*for(var i=0;i<data.length;i++){
                 $scope.timeStamp = parseInt(data[i]._id.toString().substr(0,8), 16)*1000;
                 var date = new Date($scope.timeStamp);
                 data[i].data = date;
 
                 $scope.culmi.push(data[i]);
-            }
+            }*/
         });
 
 

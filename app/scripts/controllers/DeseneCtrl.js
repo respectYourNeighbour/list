@@ -16,7 +16,7 @@
 
         $scope.desene = [];
 
-        ListeService.getDesene().success(function(data){
+        $scope.getDesene = ListeService.getDesene().success(function(data){
             $scope.desene = data;
             /*for(var i=0;i<data.length;i++){
                 $scope.timeStamp = parseInt(data[i]._id.toString().substr(0,8), 16)*1000;

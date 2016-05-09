@@ -22,7 +22,7 @@
         </div>
     </div> -->
 
-    <div class="row">
+    <div class="row" cg-busy="getFacts">
         <div class="col-md-12 col-lg-10 col-lg-offset-1">
             <div class="bn-box bn-sepia" dir-paginate="fact in facts | orderBy: orderList | filter:searchFilter | itemsPerPage: pageSize " pagination-id="factspaginateid" current-page="currentPage" ng-controller="RepeatController">
                 <div class="bn-box-content" >

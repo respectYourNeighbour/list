@@ -7,8 +7,8 @@
     </div>
     <hr>
     <br>
-    <div class="row">
-        <div class="col-md-12 col-lg-10 col-lg-offset-1" cg-busy="getCitate">
+    <div class="row" cg-busy="getCitate">
+        <div class="col-md-12 col-lg-10 col-lg-offset-1">
             <div class="bn-box bn-sepia" dir-paginate="citat in citate | filter:searchFilter | itemsPerPage: pageSize " pagination-id="culmiPaginateId" current-page="currentPage" ng-controller="RepeatController">
                 <div class="bn-box-content" >
                     <!-- <p><strong ng-bind-html="banc.name" ></strong></p> -->

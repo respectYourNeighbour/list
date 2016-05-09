@@ -17,7 +17,7 @@
             //console.log('change to page ' + num);
         };
 
-        $scope.getCitate = CitateService.getCitateSocrate().success(function(data){
+        $scope.getCitate = CitateService.getCitateSocrates().success(function(data){
             $scope.citate = data;
         });
 

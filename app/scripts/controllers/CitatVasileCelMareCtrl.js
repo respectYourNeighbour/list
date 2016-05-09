@@ -8,7 +8,7 @@
 (function() {
     'use strict';
 
-    function VasileCelMareCtrl($scope, $filter, CitateService){
+    function SfantulVasileCelMareCtrl($scope, $filter, CitateService){
         $scope.changeAccessLevel(42);
         $scope.currentPage = 1;
         $scope.pageSize = 10;
@@ -17,7 +17,7 @@
             //console.log('change to page ' + num);
         };
 
-        $scope.getCitate = CitateService.getCitateVasileCelMare().success(function(data){
+        $scope.getCitate = CitateService.getCitateSfantulVasileCelMare().success(function(data){
             $scope.citate = data;
         });
 
@@ -26,5 +26,5 @@
 
     angular
         .module('myAngularApp')
-        .controller('VasileCelMareCtrl', ['$scope', '$filter', 'CitateService', VasileCelMareCtrl]);
+        .controller('SfantulVasileCelMareCtrl', ['$scope', '$filter', 'CitateService', SfantulVasileCelMareCtrl]);
 })();

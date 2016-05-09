@@ -12,17 +12,17 @@
         console.log('Anunturi Controller');
         $scope.WelcomeMessage = 'Welcome to Ghicitori!';
 
-        $scope.anunturi = [];
+        //$scope.anunturi = [];
 
-        anunturiService.getAnunturi().success(function(data){
-
-            for(var i=0;i<data.length;i++){
+        $scope.getAnunturi = anunturiService.getAnunturi().success(function(data){
+            $scope.anunturi = data;
+            /*for(var i=0;i<data.length;i++){
                 $scope.timeStamp = parseInt(data[i]._id.toString().substr(0,8), 16)*1000;
                 var date = new Date($scope.timeStamp);
                 data[i].data = date;
 
                 $scope.anunturi.push(data[i]);
-            }
+            }*/
         });
 
 

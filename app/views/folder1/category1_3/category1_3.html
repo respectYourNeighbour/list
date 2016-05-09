@@ -16,10 +16,10 @@
         </div>
     </div> -->
 
-    <div class="row">
+    <div class="row" cg-busy="getGhicitori">
         <div class="col-md-12 col-lg-10 col-lg-offset-1">
-            <div class="bn-box bn-sepia" dir-paginate="ghicitoare in ghicitori | filter:searchFilter | itemsPerPage: pageSize " pagination-id="culmiPaginateId" current-page="currentPage" ng-controller="RepeatController">
-                <div class="bn-box-content" >
+            <div class="bn-box bn-sepia" dir-paginate="ghicitoare in ghicitori | filter:searchFilter | itemsPerPage: pageSize " pagination-id="culmiPaginateId" current-page="currentPage" ng-controller="RepeatController" >
+                <div class="bn-box-content cursor" ng-click="showAnswer()">
                     <!-- <p><strong ng-bind-html="banc.name" ></strong></p> -->
                     <div>
                         <span class="bancNr">{{::number}}</span>
@@ -38,6 +38,9 @@
                             </a>
                         </div>
                     </div> -->
+                </div>
+                <div class="ghicitoareOverlay bn-box-content" ng-show="answer" ng-click="showAnswer()">
+                    <h2 ng-bind-html="::ghicitoare.raspuns"></h2>
                 </div>
             </div>
             <hr>

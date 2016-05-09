@@ -156,6 +156,11 @@ angular.module('RepeatController', []).controller('RepeatController', ['$scope',
       $scope.number = (index + 1) + ($scope.currentPage - 1) * $scope.pageSize;
     });
 
+    $scope.showAnswer = function() {
+        console.log('click answer');
+        $scope.answer = !$scope.answer;
+    };
+
 }]);
 
 

@@ -149,8 +149,8 @@
             return $http.get('/api/getCitateSfantulVasileCelMare', {cache: true});
         }
 
-        function getCitateSocrate() {
-            return $http.get('/api/getCitateSocrate', {cache: true});
+        function getCitateSocrates() {
+            return $http.get('/api/getCitateSocrates', {cache: true});
         }
 
         function getCitateStevenWright() {
@@ -214,7 +214,7 @@
             getCitateSfantulPetru: getCitateSfantulPetru,
             getCitateSfantulSimeonNoulTeolog: getCitateSfantulSimeonNoulTeolog,
             getCitateSfantulVasileCelMare: getCitateSfantulVasileCelMare,
-            getCitateSocrate: getCitateSocrate,
+            getCitateSocrates: getCitateSocrates,
             getCitateStevenWright: getCitateStevenWright,
             getCitateSunTzu: getCitateSunTzu,
             getCitateThomasJefferson: getCitateThomasJefferson,

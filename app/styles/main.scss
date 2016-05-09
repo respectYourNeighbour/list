@@ -455,6 +455,28 @@ body{
 /* ---------- GLUME-BOX ---------- */
 
 
+/*GHICITORI*/
+.bn-box.bn-sepia .ghicitoareOverlay.bn-box-content{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    cursor: pointer;
+    color: #4d861c;
+    text-shadow: 1px 1px 1px #e9f8dc;
+    border: 1px solid #dcf3c7;
+    background: #c1ea9d;
+    box-shadow: inset 0 0 45px #96dc5a;
+    h2{
+        font-weight: bold;
+        color: rgb(134, 102, 41);
+        text-shadow: rgb(248, 243, 233) 1px 1px 1px;
+    }
+}
+.cursor{
+    cursor: pointer;
+}
+
 
 
 /* Small devices (tablets, 768px and up) */
