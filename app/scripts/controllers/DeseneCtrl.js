@@ -31,8 +31,9 @@
 
 
 
-        $scope.pageChangeHandler = function(num) {
-            console.log('change to page ' + num);
+        $scope.pageChangeHandler = function() {
+            //console.log('change to page ' + num);
+            window.scrollTo(0,0);
         };
     }
 

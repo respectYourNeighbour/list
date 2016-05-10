@@ -1,50 +1,80 @@
-<!--CARTI INTERESANTE-->
-<div class="container-fluid">
-
-    <!-- <div class="row">
-        <div class="col-xs-12 col-md-4 col-md-offset-2">
+<!--CARTI CRESTINE-->
+<div class="container-fluid" cg-busy="getCarti">
+    <div class="row">
+        <div class="col-xs-12">
+            <p class="white-txt-shadow-effect">Listă Cărţi Interesante</p>
+        </div>
+    </div>
+    <hr>
+    <br>
+    <div class="row">
+        <div class="col-xs-12 col-lg-10 col-lg-offset-1 col-md-4">
             <span>
-                <label for="name" class='itemsPerPageLabel'>Items per page</label>
-                <input min="1" max="100" class="itemsPerPage" ng-model="pageSize" type="number" />
+                <input ng-model="searchFilter.ro_name" id="search" class="basic-slide" id="name" type="text" placeholder="Ce anume?" />
+                <label for="name">Caută</label>
             </span>
         </div>
-        <div class="col-xs-12 col-md-4">
-            <span>
-                <input ng-model="searchFilter.body" id="search" class="basic-slide" id="name" type="text" placeholder="What?" />
-                <label for="name">Search</label>
-            </span>
-        </div>
-    </div> -->
+    </div>
+    <br>
 
     <div class="row">
+        <div class="text-center">
+            <dir-pagination-controls boundary-links="true" on-page-change="pageChangeHandler(newPageNumber)" pagination-id="desenepaginateid" template-url="bower_components/angular-utils-pagination/dirPagination.tpl.html"></dir-pagination-controls>
+        </div>
+
         <div class="col-md-12 col-lg-10 col-lg-offset-1">
-            <div class="bn-box bn-sepia" dir-paginate="banc in cartiInteresante | filter:searchFilter | itemsPerPage: pageSize " pagination-id="bancuri" current-page="currentPage" ng-controller="RepeatController">
-                <div class="bn-box-content" >
-                    <!-- <p><strong ng-bind-html="banc.name" ></strong></p> -->
-                    <div>
-                        <span class="bancNr">{{::number}}</span>
-                        <p ng-bind-html="::banc.autor"></p>
-                        <p ng-bind-html="::banc.name"></p>
-                        <p ng-bind-html="::banc.description"></p>
-                    </div>
-                    <hr>
+            <div class="bn-box bn-sepia" dir-paginate="carte in cartiInteresante | filter:searchFilter | itemsPerPage: pageSize " pagination-id="desenepaginateid" current-page="currentPage" ng-controller="RepeatController">
+                <div class="bn-box-content" style="overflow: auto">
+
+        			<div style="float:left; margin-right: 20px;">
+        				{{::number}}
+        			</div>
+
+        			<div style="float:left; margin-right: 20px;">
+        				<img align="left" class="thumbnail" src="{{::carte.picture}}" alt="{{::carte.picture_alt}}" style="width:214px;height:317px;">
+        			</div>
+
+        			<div style="float:left">
+        				<span class="deseneText desenTitle_ro">{{::carte.ro_name}}</span>
+        				<br>
+                    	<span class="deseneText desenTitle_en">"{{::carte.en_name}}"</span>
+                    	<br>
+                    	<span class="deseneText desenGenre">- {{::carte.autor}} -</span>
+                    	<hr>
+                    	<span data-toggle="tooltip" data-placement="top" title="An apariţie" class="deseneText desenYear" tooltip><i class="fa fa-calendar"></i> {{::carte.year}}</span>
+						<br>
+                    	<div class="deseneText desenImdbLink">
+                    		<a href="{{::carte.link1}}" target="_blank"><i class="fa fa-link"></i> {{::carte.link1}}</a>
+                    	</div>
+                        <div class="deseneText desenImdbLink">
+                    		<a href="{{::carte.link2}}" target="_blank"><i class="fa fa-link"></i> {{::carte.link2}}</a>
+                    	</div>
+        			</div>
+
+        			<div class="deseneText deseneDescription" style="clear:both">
+						{{::carte.description}}
+					</div>
+
+                    <hr style="clear:both">
                     <!-- <div class="bancInfoWrapper">
                         <div class="bancDate">
-                            <span class="fa fa fa-calendar"></span> {{::banc.data | date:'medium'}}
+                            <span class="fa fa fa-calendar"></span> {{::desen.data | date:'medium'}}
                         </div>
                         <div class="bancLike" ng-if="isAuthenticated()">
                             <a ng-click="addLike($event, banc);">
                                 <span class="fa fa-thumbs-o-up"></span>
-                                {{banc.likes}}
+                                {{desen.likes}}
                             </a>
                         </div>
                     </div> -->
+
                 </div>
             </div>
+            <hr>
         </div>
 
         <div class="text-center">
-            <dir-pagination-controls boundary-links="true" on-page-change="pageChangeHandler(newPageNumber)" pagination-id="bancuri" template-url="bower_components/angular-utils-pagination/dirPagination.tpl.html"></dir-pagination-controls>
+            <dir-pagination-controls boundary-links="true" on-page-change="pageChangeHandler(newPageNumber)" pagination-id="desenepaginateid" template-url="bower_components/angular-utils-pagination/dirPagination.tpl.html"></dir-pagination-controls>
         </div>
     </div>
 

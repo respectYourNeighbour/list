@@ -8,10 +8,14 @@
 (function() {
     'use strict';
 
-    function CartiCtrl($scope){
+    function ListaCartiInteresante($scope, ListeService){
         console.log('Top Carti Controller');
-        $scope.WelcomeMessage = 'Welcome to Top Carti!';
         $scope.changeAccessLevel(21);
+
+
+        $scope.getCarti = ListeService.getCartiInteresante().success(function(data){
+            $scope.cartiInteresante = data;
+        });
 
 
         //Pagination definition.
@@ -25,5 +29,5 @@
 
     angular
         .module('myAngularApp')
-        .controller('CartiCtrl', ['$scope', CartiCtrl]);
+        .controller('ListaCartiInteresante', ['$scope', 'ListeService', ListaCartiInteresante]);
 })();

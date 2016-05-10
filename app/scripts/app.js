@@ -8,7 +8,6 @@ angular.module('myAngularApp', ['satellizer', 'ui.router', 'toastr', 'ngRoute', 
         'AforismeCtrl',
         'CitateCtrl',
             'CitateAristotelCtrl',
-        'CuvinteCtrl',
         'DevizeDeViataCtrl',
         'LozinciCtrl',
         'MaximeCtrl',
@@ -154,7 +153,7 @@ angular.module('myAngularApp', ['satellizer', 'ui.router', 'toastr', 'ngRoute', 
                     /*CRESTINE*/
                     .state('/subcategory2_1_1', {
                         url: '/subcategory2_1_1',
-                        controller: 'CartiCtrl',
+                        controller: 'ListaCartiCrestine',
                         templateUrl: '/views/folder2/category2_1/subcat_2_1_1.html',
                         resolve: {
 
@@ -163,7 +162,7 @@ angular.module('myAngularApp', ['satellizer', 'ui.router', 'toastr', 'ngRoute', 
                     /*INTERESANTE*/
                     .state('/subcategory2_1_2', {
                         url: '/subcategory2_1_2',
-                        controller: 'CartiCtrl',
+                        controller: 'ListaCartiInteresante',
                         templateUrl: '/views/folder2/category2_1/subcat_2_1_2.html',
                         resolve: {
 

@@ -25,9 +25,13 @@ function ContentHandler(db, mongodb) {
     var anunturi = db.collection("anunturi");
 
     /*LISTE*/
-    var topCarti = db.collection("topCarti");
+    var listaCartiCrestine = db.collection("listaCartiCrestine");
+    var listaCartiInteresante = db.collection("listaCartiInteresante");
+
     var desene = db.collection("desene");
     var filme = db.collection("filme");
+
+    var cuvinte = db.collection("cuvinte");
 
     /*MEDIA*/
     var coolGifs = db.collection("gifsCool");
@@ -160,6 +164,21 @@ function ContentHandler(db, mongodb) {
         });
     }
 
+    /*GET CULMI*/
+    this.getCuvinte = function(req, res, next){
+        cuvinte.find().toArray(function(err,items) {
+            "use strict";
+            if (err) throw err;
+
+            console.log("err",err)
+            console.log("Found " + items.length + " culmi");
+
+            res.json(items);
+        });
+    }
+
+
+
     /*GET GHICITORI*/
     this.getGhicitori = function(req, res, next){
         ghicitori.find().toArray(function(err,items) {
@@ -192,9 +211,10 @@ function ContentHandler(db, mongodb) {
      |--------------------------------------------------------------------------
      */
 
+
     /*GET TOP CARTI*/
-    this.getTopCarti = function(req, res, next){
-        topCarti.find().toArray(function(err,items) {
+    this.getCartiCrestine = function(req, res, next){
+        listaCartiCrestine.find().toArray(function(err,items) {
             "use strict";
             if (err) throw err;
 
@@ -204,6 +224,21 @@ function ContentHandler(db, mongodb) {
             res.json(items);
         });
     }
+
+    this.getCartiInteresante = function(req, res, next){
+        listaCartiInteresante.find().toArray(function(err,items) {
+            "use strict";
+            if (err) throw err;
+
+            console.log("err",err)
+            console.log("Found " + items.length + " topCarti");
+
+            res.json(items);
+        });
+    }
+
+
+
 
     /*GET TOP DESENE*/
     this.getDesene = function(req, res, next){

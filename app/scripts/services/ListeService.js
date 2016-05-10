@@ -13,13 +13,18 @@
             return $http.get('/api/getDesene', {cache: true});
         }
 
-        function getTopCarti() {
-            return $http.get('/api/getTopCarti', {cache: true});
+        function getCartiCrestine() {
+            return $http.get('/api/getCartiCrestine', {cache: true});
+        }
+
+        function getCartiInteresante() {
+            return $http.get('/api/getCartiInteresante', {cache: true});
         }
 
         return {
             getDesene: getDesene,
-            getTopCarti : getTopCarti
+            getCartiCrestine: getCartiCrestine,
+            getCartiInteresante: getCartiInteresante
         };
 
     }]);

@@ -99,14 +99,14 @@ body{
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-	height: 41px;
+	height: 71px;
 	// float: left;
 	border-bottom: 1px solid $lightBlue;
 	.navBarBtn
 	{
 		float: left;
 		a{
-			line-height: 40px;
+			line-height: 70px;
 			text-decoration: none;
 			width: inherit;
 			height: inherit;
@@ -114,6 +114,7 @@ body{
 			font-size: 2rem;
 			text-align: center;
 			color: #fff;
+            padding-left: 30px;
 		}
 	}
     #registerBtn{
@@ -541,7 +542,7 @@ body{
         position: fixed;
 		display: block!important;
 		width: 250px;
-        margin-top: 40px;
+        margin-top: 70px;
 		nav{
 			background-color: $lightBlue;
 			box-shadow: none;
@@ -905,4 +906,15 @@ body{
 
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
   display: none !important;
+}
+
+
+/*LOGO MIC*/
+.logoMic{
+    width: 65px;
+    height: 65px;
+    position: absolute;
+    top: 2px;
+    left: 5px;
+    background-image: url("../images/logoMic.png");
 }

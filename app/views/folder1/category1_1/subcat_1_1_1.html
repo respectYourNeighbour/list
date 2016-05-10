@@ -1,22 +1,33 @@
 <!--BANCURI ANIMALE-->
-<div class="container-fluid">
-
-    <!-- <div class="row">
-        <div class="col-xs-12 col-md-4 col-md-offset-2">
+<div class="container-fluid" cg-busy="bancuriAnimalePromise">
+    <div class="row">
+        <div class="col-xs-12">
+            <p class="white-txt-shadow-effect">Bancuri Animale</p>
+        </div>
+    </div>
+    <hr>
+    <br>
+    <div class="row">
+        <!-- <div class="col-xs-12 col-md-4 col-md-offset-2">
             <span>
                 <label for="name" class='itemsPerPageLabel'>Items per page</label>
                 <input min="1" max="100" class="itemsPerPage" ng-model="pageSize" type="number" />
             </span>
-        </div>
-        <div class="col-xs-12 col-md-4">
+        </div> -->
+        <div class="col-xs-12 col-lg-10 col-lg-offset-1 col-md-4">
             <span>
-                <input ng-model="searchFilter.body" id="search" class="basic-slide" id="name" type="text" placeholder="What?" />
-                <label for="name">Search</label>
+                <input ng-model="searchFilter.body" id="search" class="basic-slide" id="name" type="text" placeholder="Ce anume?" />
+                <label for="name">Caută</label>
             </span>
         </div>
-    </div> -->
+    </div>
+    <br>
 
-    <div class="row" cg-busy="bancuriAnimalePromise">
+    <div class="row">
+        <div class="text-center">
+            <dir-pagination-controls boundary-links="true" on-page-change="pageChangeHandler(newPageNumber)" pagination-id="bancuri" template-url="bower_components/angular-utils-pagination/dirPagination.tpl.html"></dir-pagination-controls>
+        </div>
+
         <div class="col-md-12 col-lg-10 col-lg-offset-1">
             <div class="bn-box bn-sepia" dir-paginate="banc in bancuriAnimale | filter:searchFilter | itemsPerPage: pageSize" pagination-id="bancuri" current-page="currentPage" ng-controller="RepeatController">
                 <div class="bn-box-content" >

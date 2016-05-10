@@ -35,7 +35,9 @@ module.exports = function(app, db) {
     app.get('/api/getGhicitori', contentHandler.getGhicitori);
     app.get('/api/getAnunturi', contentHandler.getAnunturi);
     /*LISTE - API ROUTE*/
-    app.get('/api/getTopCarti', contentHandler.getTopCarti);
+    app.get('/api/getCartiCrestine', contentHandler.getCartiCrestine);
+    app.get('/api/getCartiInteresante', contentHandler.getCartiInteresante);
+
     app.get('/api/getDesene', contentHandler.getDesene);
     app.get('/api/getFilme', contentHandler.getFilme);
 
@@ -49,6 +51,8 @@ module.exports = function(app, db) {
 
     app.get('/api/getMusic', contentHandler.getMusic);
     app.get('/api/getPoze', contentHandler.getPoze);
+
+    app.get('/api/getCuvinte', contentHandler.getCuvinte);
 
     /*SUFLET & MINTE - API ROUTE*/
     app.get('/api/getFacts', contentHandler.getFacts);

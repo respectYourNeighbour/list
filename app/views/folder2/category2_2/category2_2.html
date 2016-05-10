@@ -1,22 +1,33 @@
 <!--TOP DESENE-->
-<div class="container-fluid">
-
-    <!-- <div class="row">
-        <div class="col-xs-12 col-md-4 col-md-offset-2">
+<div class="container-fluid" cg-busy="getDesene">
+    <div class="row">
+        <div class="col-xs-12">
+            <p class="white-txt-shadow-effect">Desene Animate</p>
+        </div>
+    </div>
+    <hr>
+    <br>
+    <div class="row">
+        <!-- <div class="col-xs-12 col-md-4 col-md-offset-2">
             <span>
                 <label for="name" class='itemsPerPageLabel'>Items per page</label>
                 <input min="1" max="100" class="itemsPerPage" ng-model="pageSize" type="number" />
             </span>
-        </div>
-        <div class="col-xs-12 col-md-4">
+        </div> -->
+        <div class="col-xs-12 col-lg-10 col-lg-offset-1 col-md-4">
             <span>
-                <input ng-model="searchFilter.body" id="search" class="basic-slide" id="name" type="text" placeholder="What?" />
+                <input ng-model="searchFilter.ro_name" id="search" class="basic-slide" id="name" type="text" placeholder="What?" />
                 <label for="name">Search</label>
             </span>
         </div>
-    </div> -->
+    </div>
+    <br>
 
-    <div class="row" cg-busy="getDesene">
+    <div class="row">
+        <div class="text-center">
+            <dir-pagination-controls boundary-links="true" on-page-change="pageChangeHandler(newPageNumber)" pagination-id="desenepaginateid" template-url="bower_components/angular-utils-pagination/dirPagination.tpl.html"></dir-pagination-controls>
+        </div>
+
         <div class="col-md-12 col-lg-10 col-lg-offset-1">
             <div class="bn-box bn-sepia" dir-paginate="desen in desene | filter:searchFilter | itemsPerPage: pageSize " pagination-id="desenepaginateid" current-page="currentPage" ng-controller="RepeatController">
                 <div class="bn-box-content" style="overflow: auto">

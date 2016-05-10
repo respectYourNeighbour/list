@@ -16,6 +16,7 @@
 
         $scope.pageChangeHandler = function() {
             //console.log('change to page ' + num);
+            window.scrollTo(0,0);
         };
 
         $scope.getReactionGifs = GifsService.getReactionGifs().success(function(data){
