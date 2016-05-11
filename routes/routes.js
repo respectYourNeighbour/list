@@ -38,6 +38,10 @@ module.exports = function(app, db) {
     app.get('/api/getCartiCrestine', contentHandler.getCartiCrestine);
     app.get('/api/getCartiInteresante', contentHandler.getCartiInteresante);
 
+    app.get('/api/getAforisme', contentHandler.getAforisme);
+
+
+
     app.get('/api/getDesene', contentHandler.getDesene);
     app.get('/api/getFilme', contentHandler.getFilme);
 

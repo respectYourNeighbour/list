@@ -28,6 +28,8 @@ function ContentHandler(db, mongodb) {
     var listaCartiCrestine = db.collection("listaCartiCrestine");
     var listaCartiInteresante = db.collection("listaCartiInteresante");
 
+    var aforisme = db.collection("aforisme");
+
     var desene = db.collection("desene");
     var filme = db.collection("filme");
 
@@ -227,6 +229,18 @@ function ContentHandler(db, mongodb) {
 
     this.getCartiInteresante = function(req, res, next){
         listaCartiInteresante.find().toArray(function(err,items) {
+            "use strict";
+            if (err) throw err;
+
+            console.log("err",err)
+            console.log("Found " + items.length + " topCarti");
+
+            res.json(items);
+        });
+    }
+
+    this.getAforisme = function(req, res, next){
+        aforisme.find().toArray(function(err,items) {
             "use strict";
             if (err) throw err;
 

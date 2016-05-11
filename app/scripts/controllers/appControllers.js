@@ -284,13 +284,6 @@ angular.module('SufletMinteCtrl', []).controller('SufletMinteCtrl', ['$scope', f
     $scope.changeAccessLevel(4);
 }]);
 
-//Aforisme Controller
-angular.module('AforismeCtrl', []).controller('AforismeCtrl', ['$scope', function($scope) {
-    'use strict';
-    console.log('Aforisme Controller');
-    $scope.WelcomeMessage = 'Welcome to Aforisme!';
-    //$scope.changeAccessLevel(41);
-}]);
 
 //Citate Controller
 angular.module('CitateCtrl', []).controller('CitateCtrl', ['$scope', function($scope) {
@@ -353,14 +346,6 @@ angular.module('LozinciCtrl', []).controller('LozinciCtrl', ['$scope', function(
     console.log('Lozinci Controller');
     $scope.WelcomeMessage = 'Welcome to Lozinci!';
     //$scope.changeAccessLevel(45);
-}]);
-
-//Maxime Controller
-angular.module('MaximeCtrl', []).controller('MaximeCtrl', ['$scope', function($scope) {
-    'use strict';
-    console.log('Maxime Controller');
-    $scope.WelcomeMessage = 'Welcome to Maxime!';
-   // $scope.changeAccessLevel(46);
 }]);
 
 
