@@ -920,3 +920,19 @@ body{
     left: 5px;
     background-image: url("../images/logoMic.png");
 }
+
+
+/*Contact US*/
+.contactUs{
+    padding: 10px;
+    border-top: 1px solid #47a3da;
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    color: #fff;
+    text-align: center;
+    font-size: 1.5em;
+}
+.contactUs > div:first-of-type{
+    font-family: "Pacifico", cursive;
+}
