@@ -1,0 +1,58 @@
+@import "compass/css3";
+
+/*=====================*/
+$fb-cl:#3B579D;
+$twt-cl:#00ACED;
+$gp-cl:#DD4A3A;
+$in-cl:#007BB6;
+$pin-cl:#CB2026;
+
+.socialWrapper{
+    padding-left: 0px;
+    margin-top: 200px;
+}
+
+.social-nav{
+    float: left;
+    padding: 0;
+    list-style: none;
+    display: inline-block;
+    margin:10px auto;
+    li{
+        display: inline-block;
+    }
+    a {
+        display: inline-block;
+        float: left;
+        width: 48px;
+        height: 48px;
+        font-size: 20px;
+        color: #FFF;
+        text-decoration: none;
+        cursor: pointer;
+        text-align: center;
+        line-height: 48px;
+        background: #000;
+        position: relative;
+        @include transition(.5s);
+    }
+}
+
+.model-0{
+    @include transition(.5s);
+    li{
+        float: none;
+        display: block;
+    }
+    a{
+        &:hover{
+            padding-left: 20px;
+            width:65px;
+        }
+    }
+    .twitter{ background:$twt-cl}
+    .facebook{ background:$fb-cl}
+    .google-plus{background:$gp-cl}
+    .linkedin{background:$in-cl}
+    .pinterest{ background:$pin-cl}
+}

@@ -36,6 +36,16 @@
 
 
 <body ng-app="myAngularApp" ng-controller="appWrapController">
+    <div id="fb-root"></div>
+    <!-- facebook page plugin -->
+    <!-- https://developers.facebook.com/docs/plugins/page-plugin -->
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/ro_RO/sdk.js#xfbml=1&version=v2.6";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
 
     <div id="topHeader">
         <div class="navBarBtn blue" id="registerBtn">
