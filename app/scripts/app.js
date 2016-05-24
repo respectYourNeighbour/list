@@ -376,7 +376,7 @@ angular.module('myAngularApp', ['satellizer', 'ui.router', 'toastr', 'ngRoute', 
                     .state('/category4_2_2', {
                         url: '/category4_2_2',
                         controller: 'AlbertEinsteinCtrl',
-                        templateUrl: '/views/folder4/category4_2/category4_2_2.html',
+                        templateUrl: '/views/folder4/category4_2/category4_2_1.html',
                         resolve: {
 
                         }
@@ -385,7 +385,7 @@ angular.module('myAngularApp', ['satellizer', 'ui.router', 'toastr', 'ngRoute', 
                     .state('/category4_2_3', {
                         url: '/category4_2_3',
                         controller: 'AristotelCtrl',
-                        templateUrl: '/views/folder4/category4_2/category4_2_3.html',
+                        templateUrl: '/views/folder4/category4_2/category4_2_1.html',
                         resolve: {
 
                         }
@@ -394,7 +394,7 @@ angular.module('myAngularApp', ['satellizer', 'ui.router', 'toastr', 'ngRoute', 
                     .state('/category4_2_4', {
                         url: '/category4_2_4',
                         controller: 'BenjaminFranklinCtrl',
-                        templateUrl: '/views/folder4/category4_2/category4_2_4.html',
+                        templateUrl: '/views/folder4/category4_2/category4_2_1.html',
                         resolve: {
 
                         }
@@ -403,7 +403,7 @@ angular.module('myAngularApp', ['satellizer', 'ui.router', 'toastr', 'ngRoute', 
                     .state('/category4_2_5', {
                         url: '/category4_2_5',
                         controller: 'BuddhaCtrl',
-                        templateUrl: '/views/folder4/category4_2/category4_2_5.html',
+                        templateUrl: '/views/folder4/category4_2/category4_2_1.html',
                         resolve: {
 
                         }
@@ -412,7 +412,7 @@ angular.module('myAngularApp', ['satellizer', 'ui.router', 'toastr', 'ngRoute', 
                     .state('/category4_2_6', {
                         url: '/category4_2_6',
                         controller: 'CharlesDickensCtrl',
-                        templateUrl: '/views/folder4/category4_2/category4_2_6.html',
+                        templateUrl: '/views/folder4/category4_2/category4_2_1.html',
                         resolve: {
 
                         }
@@ -421,7 +421,7 @@ angular.module('myAngularApp', ['satellizer', 'ui.router', 'toastr', 'ngRoute', 
                     .state('/category4_2_7', {
                         url: '/category4_2_7',
                         controller: 'ConfuciusCtrl',
-                        templateUrl: '/views/folder4/category4_2/category4_2_7.html',
+                        templateUrl: '/views/folder4/category4_2/category4_2_1.html',
                         resolve: {
 
                         }
@@ -430,7 +430,7 @@ angular.module('myAngularApp', ['satellizer', 'ui.router', 'toastr', 'ngRoute', 
                     .state('/category4_2_8', {
                         url: '/category4_2_8',
                         controller: 'DalaiLamaCtrl',
-                        templateUrl: '/views/folder4/category4_2/category4_2_8.html',
+                        templateUrl: '/views/folder4/category4_2/category4_2_1.html',
                         resolve: {
 
                         }
@@ -439,7 +439,7 @@ angular.module('myAngularApp', ['satellizer', 'ui.router', 'toastr', 'ngRoute', 
                     .state('/category4_2_9', {
                         url: '/category4_2_9',
                         controller: 'DemocritCtrl',
-                        templateUrl: '/views/folder4/category4_2/category4_2_9.html',
+                        templateUrl: '/views/folder4/category4_2/category4_2_1.html',
                         resolve: {
 
                         }
@@ -448,7 +448,7 @@ angular.module('myAngularApp', ['satellizer', 'ui.router', 'toastr', 'ngRoute', 
                     .state('/category4_2_10', {
                         url: '/category4_2_10',
                         controller: 'EuripideCtrl',
-                        templateUrl: '/views/folder4/category4_2/category4_2_10.html',
+                        templateUrl: '/views/folder4/category4_2/category4_2_1.html',
                         resolve: {
 
                         }
@@ -457,7 +457,7 @@ angular.module('myAngularApp', ['satellizer', 'ui.router', 'toastr', 'ngRoute', 
                     .state('/category4_2_11', {
                         url: '/category4_2_11',
                         controller: 'GeorgeBernardShawCtrl',
-                        templateUrl: '/views/folder4/category4_2/category4_2_11.html',
+                        templateUrl: '/views/folder4/category4_2/category4_2_1.html',
                         resolve: {
 
                         }
@@ -466,7 +466,7 @@ angular.module('myAngularApp', ['satellizer', 'ui.router', 'toastr', 'ngRoute', 
                     .state('/category4_2_12', {
                         url: '/category4_2_12',
                         controller: 'GeorgeWashingtonCtrl',
-                        templateUrl: '/views/folder4/category4_2/category4_2_12.html',
+                        templateUrl: '/views/folder4/category4_2/category4_2_1.html',
                         resolve: {
 
                         }
@@ -475,7 +475,7 @@ angular.module('myAngularApp', ['satellizer', 'ui.router', 'toastr', 'ngRoute', 
                     .state('/category4_2_13', {
                         url: '/category4_2_13',
                         controller: 'ImmanuelKantCtrl',
-                        templateUrl: '/views/folder4/category4_2/category4_2_13.html',
+                        templateUrl: '/views/folder4/category4_2/category4_2_1.html',
                         resolve: {
 
                         }
@@ -484,7 +484,7 @@ angular.module('myAngularApp', ['satellizer', 'ui.router', 'toastr', 'ngRoute', 
                     .state('/category4_2_14', {
                         url: '/category4_2_14',
                         controller: 'LaoTzuCtrl',
-                        templateUrl: '/views/folder4/category4_2/category4_2_14.html',
+                        templateUrl: '/views/folder4/category4_2/category4_2_1.html',
                         resolve: {
 
                         }
@@ -493,7 +493,7 @@ angular.module('myAngularApp', ['satellizer', 'ui.router', 'toastr', 'ngRoute', 
                     .state('/category4_2_15', {
                         url: '/category4_2_15',
                         controller: 'LuciusAnnaeusSenecaCtrl',
-                        templateUrl: '/views/folder4/category4_2/category4_2_15.html',
+                        templateUrl: '/views/folder4/category4_2/category4_2_1.html',
                         resolve: {
 
                         }
@@ -502,7 +502,7 @@ angular.module('myAngularApp', ['satellizer', 'ui.router', 'toastr', 'ngRoute', 
                     .state('/category4_2_16', {
                         url: '/category4_2_16',
                         controller: 'MahatmaGandhiCtrl',
-                        templateUrl: '/views/folder4/category4_2/category4_2_16.html',
+                        templateUrl: '/views/folder4/category4_2/category4_2_1.html',
                         resolve: {
 
                         }
@@ -511,7 +511,7 @@ angular.module('myAngularApp', ['satellizer', 'ui.router', 'toastr', 'ngRoute', 
                     .state('/category4_2_17', {
                         url: '/category4_2_17',
                         controller: 'MaicaTerezaCtrl',
-                        templateUrl: '/views/folder4/category4_2/category4_2_17.html',
+                        templateUrl: '/views/folder4/category4_2/category4_2_1.html',
                         resolve: {
 
                         }
@@ -520,7 +520,7 @@ angular.module('myAngularApp', ['satellizer', 'ui.router', 'toastr', 'ngRoute', 
                     .state('/category4_2_18', {
                         url: '/category4_2_18',
                         controller: 'MarkTwainCtrl',
-                        templateUrl: '/views/folder4/category4_2/category4_2_18.html',
+                        templateUrl: '/views/folder4/category4_2/category4_2_1.html',
                         resolve: {
 
                         }
@@ -529,7 +529,7 @@ angular.module('myAngularApp', ['satellizer', 'ui.router', 'toastr', 'ngRoute', 
                     .state('/category4_2_19', {
                         url: '/category4_2_19',
                         controller: 'MartinLutherKingJrCtrl',
-                        templateUrl: '/views/folder4/category4_2/category4_2_19.html',
+                        templateUrl: '/views/folder4/category4_2/category4_2_1.html',
                         resolve: {
 
                         }
@@ -538,7 +538,7 @@ angular.module('myAngularApp', ['satellizer', 'ui.router', 'toastr', 'ngRoute', 
                     .state('/category4_2_20', {
                         url: '/category4_2_20',
                         controller: 'NapoleonBonaparteCtrl',
-                        templateUrl: '/views/folder4/category4_2/category4_2_20.html',
+                        templateUrl: '/views/folder4/category4_2/category4_2_1.html',
                         resolve: {
 
                         }
@@ -547,7 +547,7 @@ angular.module('myAngularApp', ['satellizer', 'ui.router', 'toastr', 'ngRoute', 
                     .state('/category4_2_21', {
                         url: '/category4_2_21',
                         controller: 'NealeDonaldWalshCtrl',
-                        templateUrl: '/views/folder4/category4_2/category4_2_21.html',
+                        templateUrl: '/views/folder4/category4_2/category4_2_1.html',
                         resolve: {
 
                         }
@@ -556,7 +556,7 @@ angular.module('myAngularApp', ['satellizer', 'ui.router', 'toastr', 'ngRoute', 
                     .state('/category4_2_22', {
                         url: '/category4_2_22',
                         controller: 'OscarWildeCtrl',
-                        templateUrl: '/views/folder4/category4_2/category4_2_22.html',
+                        templateUrl: '/views/folder4/category4_2/category4_2_1.html',
                         resolve: {
 
                         }
@@ -565,7 +565,7 @@ angular.module('myAngularApp', ['satellizer', 'ui.router', 'toastr', 'ngRoute', 
                     .state('/category4_2_23', {
                         url: '/category4_2_23',
                         controller: 'PabloPicassoCtrl',
-                        templateUrl: '/views/folder4/category4_2/category4_2_23.html',
+                        templateUrl: '/views/folder4/category4_2/category4_2_1.html',
                         resolve: {
 
                         }
@@ -574,7 +574,7 @@ angular.module('myAngularApp', ['satellizer', 'ui.router', 'toastr', 'ngRoute', 
                     .state('/category4_2_24', {
                         url: '/category4_2_24',
                         controller: 'PlatonCtrl',
-                        templateUrl: '/views/folder4/category4_2/category4_2_24.html',
+                        templateUrl: '/views/folder4/category4_2/category4_2_1.html',
                         resolve: {
 
                         }
@@ -583,7 +583,7 @@ angular.module('myAngularApp', ['satellizer', 'ui.router', 'toastr', 'ngRoute', 
                     .state('/category4_2_25', {
                         url: '/category4_2_25',
                         controller: 'PubliliusSyrusCtrl',
-                        templateUrl: '/views/folder4/category4_2/category4_2_25.html',
+                        templateUrl: '/views/folder4/category4_2/category4_2_1.html',
                         resolve: {
 
                         }
@@ -592,7 +592,7 @@ angular.module('myAngularApp', ['satellizer', 'ui.router', 'toastr', 'ngRoute', 
                     .state('/category4_2_26', {
                         url: '/category4_2_26',
                         controller: 'RalphWaldoEmersonCtrl',
-                        templateUrl: '/views/folder4/category4_2/category4_2_26.html',
+                        templateUrl: '/views/folder4/category4_2/category4_2_1.html',
                         resolve: {
 
                         }
@@ -601,7 +601,7 @@ angular.module('myAngularApp', ['satellizer', 'ui.router', 'toastr', 'ngRoute', 
                     .state('/category4_2_27', {
                         url: '/category4_2_27',
                         controller: 'RichardWurmbrandCtrl',
-                        templateUrl: '/views/folder4/category4_2/category4_2_27.html',
+                        templateUrl: '/views/folder4/category4_2/category4_2_1.html',
                         resolve: {
 
                         }
@@ -610,7 +610,7 @@ angular.module('myAngularApp', ['satellizer', 'ui.router', 'toastr', 'ngRoute', 
                     .state('/category4_2_28', {
                         url: '/category4_2_28',
                         controller: 'SfantulAugustinCtrl',
-                        templateUrl: '/views/folder4/category4_2/category4_2_28.html',
+                        templateUrl: '/views/folder4/category4_2/category4_2_1.html',
                         resolve: {
 
                         }
@@ -619,7 +619,7 @@ angular.module('myAngularApp', ['satellizer', 'ui.router', 'toastr', 'ngRoute', 
                     .state('/category4_2_29', {
                         url: '/category4_2_29',
                         controller: 'SfantulCiprianCtrl',
-                        templateUrl: '/views/folder4/category4_2/category4_2_29.html',
+                        templateUrl: '/views/folder4/category4_2/category4_2_1.html',
                         resolve: {
 
                         }
@@ -628,7 +628,7 @@ angular.module('myAngularApp', ['satellizer', 'ui.router', 'toastr', 'ngRoute', 
                     .state('/category4_2_30', {
                         url: '/category4_2_30',
                         controller: 'SfantulIoanGuraDeAurCtrl',
-                        templateUrl: '/views/folder4/category4_2/category4_2_30.html',
+                        templateUrl: '/views/folder4/category4_2/category4_2_1.html',
                         resolve: {
 
                         }
@@ -637,7 +637,7 @@ angular.module('myAngularApp', ['satellizer', 'ui.router', 'toastr', 'ngRoute', 
                     .state('/category4_2_31', {
                         url: '/category4_2_31',
                         controller: 'SfantulIoanScararulCtrl',
-                        templateUrl: '/views/folder4/category4_2/category4_2_31.html',
+                        templateUrl: '/views/folder4/category4_2/category4_2_1.html',
                         resolve: {
 
                         }
@@ -646,7 +646,7 @@ angular.module('myAngularApp', ['satellizer', 'ui.router', 'toastr', 'ngRoute', 
                     .state('/category4_2_32', {
                         url: '/category4_2_32',
                         controller: 'SfantulIrineuCtrl',
-                        templateUrl: '/views/folder4/category4_2/category4_2_32.html',
+                        templateUrl: '/views/folder4/category4_2/category4_2_1.html',
                         resolve: {
 
                         }
@@ -655,7 +655,7 @@ angular.module('myAngularApp', ['satellizer', 'ui.router', 'toastr', 'ngRoute', 
                     .state('/category4_2_33', {
                         url: '/category4_2_33',
                         controller: 'SfantulPetruCtrl',
-                        templateUrl: '/views/folder4/category4_2/category4_2_33.html',
+                        templateUrl: '/views/folder4/category4_2/category4_2_1.html',
                         resolve: {
 
                         }
@@ -664,7 +664,7 @@ angular.module('myAngularApp', ['satellizer', 'ui.router', 'toastr', 'ngRoute', 
                     .state('/category4_2_34', {
                         url: '/category4_2_34',
                         controller: 'SfantulSimeonNoulTeologCtrl',
-                        templateUrl: '/views/folder4/category4_2/category4_2_34.html',
+                        templateUrl: '/views/folder4/category4_2/category4_2_1.html',
                         resolve: {
 
                         }
@@ -673,7 +673,7 @@ angular.module('myAngularApp', ['satellizer', 'ui.router', 'toastr', 'ngRoute', 
                     .state('/category4_2_35', {
                         url: '/category4_2_35',
                         controller: 'SfantulVasileCelMareCtrl',
-                        templateUrl: '/views/folder4/category4_2/category4_2_35.html',
+                        templateUrl: '/views/folder4/category4_2/category4_2_1.html',
                         resolve: {
 
                         }
@@ -682,7 +682,7 @@ angular.module('myAngularApp', ['satellizer', 'ui.router', 'toastr', 'ngRoute', 
                     .state('/category4_2_36', {
                         url: '/category4_2_36',
                         controller: 'SocrateCtrl',
-                        templateUrl: '/views/folder4/category4_2/category4_2_36.html',
+                        templateUrl: '/views/folder4/category4_2/category4_2_1.html',
                         resolve: {
 
                         }
@@ -691,7 +691,7 @@ angular.module('myAngularApp', ['satellizer', 'ui.router', 'toastr', 'ngRoute', 
                     .state('/category4_2_37', {
                         url: '/category4_2_37',
                         controller: 'StevenWrightCtrl',
-                        templateUrl: '/views/folder4/category4_2/category4_2_37.html',
+                        templateUrl: '/views/folder4/category4_2/category4_2_1.html',
                         resolve: {
 
                         }
@@ -700,7 +700,7 @@ angular.module('myAngularApp', ['satellizer', 'ui.router', 'toastr', 'ngRoute', 
                     .state('/category4_2_38', {
                         url: '/category4_2_38',
                         controller: 'SunTzuCtrl',
-                        templateUrl: '/views/folder4/category4_2/category4_2_38.html',
+                        templateUrl: '/views/folder4/category4_2/category4_2_1.html',
                         resolve: {
 
                         }
@@ -709,7 +709,7 @@ angular.module('myAngularApp', ['satellizer', 'ui.router', 'toastr', 'ngRoute', 
                     .state('/category4_2_39', {
                         url: '/category4_2_39',
                         controller: 'ThomasJeffersonCtrl',
-                        templateUrl: '/views/folder4/category4_2/category4_2_39.html',
+                        templateUrl: '/views/folder4/category4_2/category4_2_1.html',
                         resolve: {
 
                         }
@@ -718,7 +718,7 @@ angular.module('myAngularApp', ['satellizer', 'ui.router', 'toastr', 'ngRoute', 
                     .state('/category4_2_40', {
                         url: '/category4_2_40',
                         controller: 'WilliamShakespeareCtrl',
-                        templateUrl: '/views/folder4/category4_2/category4_2_40.html',
+                        templateUrl: '/views/folder4/category4_2/category4_2_1.html',
                         resolve: {
 
                         }
@@ -727,7 +727,7 @@ angular.module('myAngularApp', ['satellizer', 'ui.router', 'toastr', 'ngRoute', 
                     .state('/category4_2_41', {
                         url: '/category4_2_41',
                         controller: 'WinstonChurchillCtrl',
-                        templateUrl: '/views/folder4/category4_2/category4_2_41.html',
+                        templateUrl: '/views/folder4/category4_2/category4_2_1.html',
                         resolve: {
 
                         }
@@ -736,7 +736,7 @@ angular.module('myAngularApp', ['satellizer', 'ui.router', 'toastr', 'ngRoute', 
                     .state('/category4_2_42', {
                         url: '/category4_2_42',
                         controller: 'AlteCitateCtrl',
-                        templateUrl: '/views/folder4/category4_2/category4_2_42.html',
+                        templateUrl: '/views/folder4/category4_2/category4_2_1.html',
                         resolve: {
 
                         }
