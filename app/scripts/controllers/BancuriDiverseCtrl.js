@@ -11,14 +11,15 @@
     function BancuriDiverseCtrl($scope, $log, $filter, $routeParams, BancuriService){
         console.log('Bancuri Controller');
         $scope.changeAccessLevel(11);
+        $scope.whatBancuri = 'Diverse';
 
         $('body').css('backgroundColor','#FFFDE4');
 
         $scope.bancuriDiverse = [];
 
-        $scope.bancuriDiversePromise = BancuriService.getAllBancuriDiverse().success(function(data){
-            console.log('bancuri animale',data[0].bancuri);
-            $scope.bancuriDiverse = data;
+        $scope.getBancuri = BancuriService.getAllBancuriDiverse().success(function(data){
+            console.log('bancuri animale',data);
+            $scope.bancuri = data;
         });
 
         $scope.addLike = function($event, banc){

@@ -348,9 +348,9 @@ module.exports = function (grunt) {
                 },
                 files: [{
                     expand: true,
-                    cwd: '<%= yeoman.app %>/images/patterns',
-                    src: ['*.png'],
-                    dest: '<%= yeoman.dist %>/images/patterns'
+                    cwd: '<%= yeoman.app %>/images',
+                    src: ['*.jpg'],
+                    dest: '<%= yeoman.dist %>/images'
                 }]
             },
             pngs: {
