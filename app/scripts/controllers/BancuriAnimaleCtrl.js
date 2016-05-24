@@ -11,10 +11,11 @@
     function BancuriAnimaleCtrl($scope, $log, $filter, $routeParams, BancuriService){
         console.log('Bancuri Controller');
         $scope.changeAccessLevel(11);
+        $scope.whatBancuri = "Animale";
 
-        $scope.bancuriAnimalePromise = BancuriService.getAllBancuriAnimale().success(function(data){
+        $scope.getBancuri = BancuriService.getAllBancuriAnimale().success(function(data){
             console.log('bancuri animale',data);
-            $scope.bancuriAnimale = data;
+            $scope.bancuri = data;
         });
 
         $scope.addLike = function($event, banc){

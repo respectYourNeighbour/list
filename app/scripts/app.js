@@ -89,7 +89,7 @@ angular.module('myAngularApp', ['satellizer', 'ui.router', 'toastr', 'ngRoute', 
                     .state('/subcategory1_1_1', {
                         url: '/subcategory1_1_1',
                         controller: 'BancuriAnimaleCtrl',
-                        templateUrl: '/views/folder1/category1_1/subcat_1_1_1.html',
+                        templateUrl: '/views/folder1/category1_1/viewBancuri.html',
                         resolve: {
 
                         }
@@ -98,7 +98,7 @@ angular.module('myAngularApp', ['satellizer', 'ui.router', 'toastr', 'ngRoute', 
                     .state('/subcategory1_1_2', {
                         url: '/subcategory1_1_2',
                         controller: 'BancuriDiverseCtrl',
-                        templateUrl: '/views/folder1/category1_1/subcat_1_1_2.html',
+                        templateUrl: '/views/folder1/category1_1/viewBancuri.html',
                         resolve: {
 
                         }
