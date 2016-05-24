@@ -8,7 +8,7 @@
     <hr>
     <br>
     <div class="row">
-        <div class="col-xs-12 col-lg-10 col-lg-offset-1 col-md-4">
+        <div class="col-lg-10 col-lg-offset-1 searchBox">
             <span>
                 <input ng-model="searchFilter.ro_name" id="search" class="basic-slide" id="name" type="text" placeholder="Ce anume?" />
                 <label for="name">Caută</label>
@@ -22,7 +22,7 @@
             <dir-pagination-controls boundary-links="true" on-page-change="pageChangeHandler(newPageNumber)" pagination-id="desenepaginateid" template-url="bower_components/angular-utils-pagination/dirPagination.tpl.html"></dir-pagination-controls>
         </div>
 
-        <div class="col-md-12 col-lg-10 col-lg-offset-1">
+        <div class="col-md-11 col-md-offset-1 col-lg-10 col-lg-offset-1">
             <div class="bn-box bn-sepia" dir-paginate="carte in cartiInteresante | filter:searchFilter | itemsPerPage: pageSize " pagination-id="desenepaginateid" current-page="currentPage" ng-controller="RepeatController">
                 <div class="bn-box-content" style="overflow: auto">
 
