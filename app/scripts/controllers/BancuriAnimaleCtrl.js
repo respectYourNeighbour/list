@@ -11,7 +11,7 @@
     function BancuriAnimaleCtrl($scope, $log, $filter, $routeParams, BancuriService){
         console.log('Bancuri Controller');
         $scope.changeAccessLevel(11);
-        $scope.whatBancuri = "Animale";
+        $scope.whatBancuri = 'Animale';
 
         $scope.getBancuri = BancuriService.getAllBancuriAnimale().success(function(data){
             console.log('bancuri animale',data);

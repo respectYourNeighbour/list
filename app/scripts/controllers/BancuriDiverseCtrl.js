@@ -11,7 +11,7 @@
     function BancuriDiverseCtrl($scope, $log, $filter, $routeParams, BancuriService){
         console.log('Bancuri Controller');
         $scope.changeAccessLevel(11);
-        $scope.whatBancuri = "Diverse";
+        $scope.whatBancuri = 'Diverse';
 
         $('body').css('backgroundColor','#FFFDE4');
 
