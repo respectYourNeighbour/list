@@ -12,7 +12,7 @@
         $scope.changeAccessLevel(42);
         $scope.currentPage = 1;
         $scope.pageSize = 10;
-        $scope.autor= "Maica Tereza";
+        $scope.autor= 'Maica Tereza';
 
         $scope.pageChangeHandler = function() {
             //console.log('change to page ' + num);

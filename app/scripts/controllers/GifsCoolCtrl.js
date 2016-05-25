@@ -12,14 +12,15 @@
         $scope.changeAccessLevel(31);
         $scope.currentPage = 1;
         $scope.pageSize = 5;
+        $scope.gifsCategoryName = 'Cool Gifs';
 
         $scope.pageChangeHandler = function() {
             //console.log('change to page ' + num);
             window.scrollTo(0,0);
         };
 
-        $scope.getCoolGifs = GifsService.getCoolGifs().success(function(data){
-            $scope.coolGifs = data;
+        $scope.getGifs = GifsService.getCoolGifs().success(function(data){
+            $scope.gifs = data;
         });
 
 

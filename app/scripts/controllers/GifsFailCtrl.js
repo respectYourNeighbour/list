@@ -12,14 +12,15 @@
         $scope.changeAccessLevel(31);
         $scope.currentPage = 1;
         $scope.pageSize = 5;
+        $scope.gifsCategoryName = 'Fail Gifs';
 
         $scope.pageChangeHandler = function() {
             //console.log('change to page ' + num);
             window.scrollTo(0,0);
         };
 
-        $scope.getFailGifs = GifsService.getFailGifs().success(function(data){
-            $scope.failGifs = data;
+        $scope.getGifs = GifsService.getFailGifs().success(function(data){
+            $scope.gifs = data;
         });
 
 

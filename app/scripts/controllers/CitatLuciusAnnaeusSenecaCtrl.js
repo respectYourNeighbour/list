@@ -12,7 +12,7 @@
         $scope.changeAccessLevel(42);
         $scope.currentPage = 1;
         $scope.pageSize = 10;
-        $scope.autor= "Lucius Annaeus Seneca";
+        $scope.autor= 'Lucius Annaeus Seneca';
 
         $scope.pageChangeHandler = function() {
             //console.log('change to page ' + num);

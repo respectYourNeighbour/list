@@ -13,15 +13,16 @@
         //console.log('Gifs wow controller');
         $scope.currentPage = 1;
         $scope.pageSize = 5;
+        $scope.gifsCategoryName = 'Wow Gifs';
 
         $scope.pageChangeHandler = function() {
             //console.log('change to page ' + num);
             window.scrollTo(0,0);
         };
 
-        $scope.getWowGifs = GifsService.getWowGifs().success(function(data){
+        $scope.getGifs = GifsService.getWowGifs().success(function(data){
             //console.log('data: ', data);
-            $scope.wowGifs = data;
+            $scope.gifs = data;
         });
 
 

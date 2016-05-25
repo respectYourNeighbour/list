@@ -205,7 +205,7 @@ angular.module('myAngularApp', ['satellizer', 'ui.router', 'toastr', 'ngRoute', 
                     .state('/subcategory3_1_1', {
                         url: '/subcategory3_1_1',
                         controller: 'GifsCoolCtrl',
-                        templateUrl: '/views/folder3/category3_1/subcat_3_1_1.html',
+                        templateUrl: '/views/folder3/category3_1/viewGifs.html',
                         resolve: {
 
                         }
@@ -214,7 +214,7 @@ angular.module('myAngularApp', ['satellizer', 'ui.router', 'toastr', 'ngRoute', 
                     .state('/subcategory3_1_2', {
                         url: '/subcategory3_1_2',
                         controller: 'GifsFailCtrl',
-                        templateUrl: '/views/folder3/category3_1/subcat_3_1_2.html',
+                        templateUrl: '/views/folder3/category3_1/viewGifs.html',
                         resolve: {
 
                         }
@@ -223,7 +223,7 @@ angular.module('myAngularApp', ['satellizer', 'ui.router', 'toastr', 'ngRoute', 
                     .state('/subcategory3_1_3', {
                         url: '/subcategory3_1_3',
                         controller: 'GifsFunnyCtrl',
-                        templateUrl: '/views/folder3/category3_1/subcat_3_1_3.html',
+                        templateUrl: '/views/folder3/category3_1/viewGifs.html',
                         resolve: {
 
                         }
@@ -232,7 +232,7 @@ angular.module('myAngularApp', ['satellizer', 'ui.router', 'toastr', 'ngRoute', 
                     .state('/subcategory3_1_4', {
                         url: '/subcategory3_1_4',
                         controller: 'GifsInterestingCtrl',
-                        templateUrl: '/views/folder3/category3_1/subcat_3_1_4.html',
+                        templateUrl: '/views/folder3/category3_1/viewGifs.html',
                         resolve: {
 
                         }
@@ -241,7 +241,7 @@ angular.module('myAngularApp', ['satellizer', 'ui.router', 'toastr', 'ngRoute', 
                     .state('/subcategory3_1_5', {
                         url: '/subcategory3_1_5',
                         controller: 'GifsWowCtrl',
-                        templateUrl: '/views/folder3/category3_1/subcat_3_1_5.html',
+                        templateUrl: '/views/folder3/category3_1/viewGifs.html',
                         resolve: {
 
                         }
@@ -250,7 +250,7 @@ angular.module('myAngularApp', ['satellizer', 'ui.router', 'toastr', 'ngRoute', 
                     .state('/subcategory3_1_6', {
                         url: '/subcategory3_1_6',
                         controller: 'GifsReactionCtrl',
-                        templateUrl: '/views/folder3/category3_1/subcat_3_1_6.html',
+                        templateUrl: '/views/folder3/category3_1/viewGifs.html',
                         resolve: {
 
                         }

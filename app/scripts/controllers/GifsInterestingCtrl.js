@@ -13,15 +13,16 @@
         console.log('Interesting gifs controller');
         $scope.currentPage = 1;
         $scope.pageSize = 5;
+        $scope.gifsCategoryName = 'Interesting Gifs';
 
         $scope.pageChangeHandler = function() {
             //console.log('change to page ' + num);
             window.scrollTo(0,0);
         };
 
-        $scope.getInterestingGifs = GifsService.getInterestingGifs().success(function(data){
+        $scope.getGifs = GifsService.getInterestingGifs().success(function(data){
             console.log('data: ', data);
-            $scope.interestingGifs = data;
+            $scope.gifs = data;
         });
 
 

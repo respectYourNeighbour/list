@@ -13,15 +13,16 @@
         //console.log('Gifs reaction controller');
         $scope.currentPage = 1;
         $scope.pageSize = 5;
+        $scope.gifsCategoryName = 'Reaction Gifs';
 
         $scope.pageChangeHandler = function() {
             //console.log('change to page ' + num);
             window.scrollTo(0,0);
         };
 
-        $scope.getReactionGifs = GifsService.getReactionGifs().success(function(data){
+        $scope.getGifs = GifsService.getReactionGifs().success(function(data){
             //console.log('data: ', data);
-            $scope.reactionGifs = data;
+            $scope.gifs = data;
         });
 
 
