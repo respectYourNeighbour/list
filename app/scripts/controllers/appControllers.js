@@ -73,8 +73,8 @@ angular.module('appWrapController', []).controller('appWrapController', ['$scope
     $scope.memoriseMenuRoute = [];
     $scope.memoriseMenuRouteShort = [];
     $scope.clickMenuItem = function(event) {
-        //console.log('click a element 1 ', this);
-        //console.log('click a element 2 ', event);
+        console.log('click a element 1 ', this);
+        console.log('click a element 2 ', event);
         /*
             Fac clear la text input field din Search: document.getElementById('searchField').value = '';
             Fac clear si la $scope search filter: $scope.justAquery1 = '';
@@ -101,11 +101,19 @@ angular.module('appWrapController', []).controller('appWrapController', ['$scope
 
         $scope.memoriseMenuRoute.push(event.target.href);
         $scope.shortPath = $scope.memoriseMenuRoute[($scope.memoriseMenuRoute.length-1)].split('/').pop();
-
         if(event.target.dataset.lastmenu === 'false'){
             $scope.memoriseMenuRouteShort.push($scope.shortPath);
             $scope.memoriseMenuId.push($scope.accessLevel);
+            $scope.activeClass = false;
         }else{
+            //event.target.addClass('active');
+            var allLi = document.querySelectorAll('div#menuItems ul li');
+            var angElement = angular.element(allLi);
+            angElement.removeClass('active');
+
+            var el =  event.currentTarget.parentElement;
+            var angElement2 = angular.element(el);
+            angElement2.addClass('active');
             // event.target.addClass(':hover > span');
            /* mobileMenuButtonAnimate.classList.toggle('open');
             $( '#MenuWrapper' ).slideToggle( 'slow', function() {

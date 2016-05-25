@@ -78,7 +78,7 @@
             <div id="menuItems">
                 <div>
                     <ul>
-                        <li ng-cloak data-ng-repeat="item in menuItems | matchAccessLevel:accessLevel:onlyOneGroup | filter:justAquery1" ng-class="{active: $index == selected}"><span class="over"></span>
+                        <li ng-cloak data-ng-repeat="item in menuItems | matchAccessLevel:accessLevel:onlyOneGroup | filter:justAquery1"><span class="over"></span>
                             <a data-lastMenu="{{item.lastMenu}}" ui-sref="{{item.href}}" data-ng-click='clickMenuItem($event)' id="{{item.id}}">
                                 <span><i class="{{item.icon}}"></i></span>
                                 {{item.name}}
