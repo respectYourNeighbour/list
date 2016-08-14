@@ -12,6 +12,8 @@
 		console.log('Proverbe Controller');
 	    $scope.WelcomeMessage = 'Welcome to Proverbe!';
 	    $scope.changeAccessLevel(47);
+
+	    $scope.status = 'ready';
 	}
 
 	angular

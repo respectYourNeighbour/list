@@ -16,6 +16,8 @@ module.exports = function (grunt) {
     // Time how long tasks take. Can help when optimizing build times
     require('time-grunt')(grunt);
 
+    grunt.loadNpmTasks('grunt-sitemap');
+
     grunt.loadNpmTasks('grunt-html2js');
 
     // Configurable paths for the application
@@ -39,6 +41,13 @@ module.exports = function (grunt) {
             main: {
                 src: ['app/views/**/*.html'],
                 dest: '.tmp/templates.js'
+            }
+        },
+
+        sitemap: {
+            dist: {
+                pattern: ['app/views/**/*.html', '!**/google*.html'], // this will exclude 'google*.html' 
+                siteRoot: 'dist/'
             }
         },
 
@@ -521,7 +530,8 @@ module.exports = function (grunt) {
         'uglify',
         'filerev',
         'usemin',
-        'htmlmin'
+        'htmlmin',
+        'sitemap'
     ]);
 
     grunt.registerTask('default', [

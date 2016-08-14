@@ -21,6 +21,8 @@
                 console.log('response',response);
             });
         };
+
+        $scope.status = 'ready';
     }
 
     angular

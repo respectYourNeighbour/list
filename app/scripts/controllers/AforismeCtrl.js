@@ -25,7 +25,7 @@
             $scope.aforisme = data;
         });
 
-
+        $scope.status = 'ready';
     }
 
     angular

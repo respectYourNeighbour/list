@@ -33,6 +33,7 @@
         $scope.pageChangeHandler = function(num) {
             console.log('change to page ' + num);
         };
+        $scope.status = 'ready';
     }
     angular
         .module('myAngularApp')

@@ -22,8 +22,8 @@
         $scope.getCitate = CitateService.getCitateSfantulIoanGuraDeAur().success(function(data){
             $scope.citate = data;
         });
-
-
+        
+        $scope.status = 'ready';
     }
 
     angular

@@ -38,6 +38,8 @@
             //console.log('change to page ' + num);
             window.scrollTo(0,0);
         };
+
+        $scope.status = 'ready';
     }
 
     angular

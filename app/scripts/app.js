@@ -1,3 +1,9 @@
+'use strict';
+
+angular.module('HashBangURLs', []).config(['$locationProvider', function($location) {
+  $location.hashPrefix('!');
+}]);
+//http://www.yearofmoo.com/2012/11/angularjs-and-seo.html
 angular.module('myAngularApp', ['satellizer', 'ui.router', 'toastr', 'ngRoute', 'ngSanitize',
         'RepeatController',
     'ListeCtrl',
@@ -25,10 +31,10 @@ angular.module('myAngularApp', ['satellizer', 'ui.router', 'toastr', 'ngRoute', 
     'LoginService',
     'angularUtils.directives.dirPagination',
     'appConfig',
-    'cgBusy'])
+    'cgBusy',
+    'HashBangURLs'])
 
     .config(function($stateProvider, $urlRouterProvider/*, $authProvider*/) {
-        'use strict';
 
         function skipIfLoggedIn($q, $auth) {
             console.log('skipIfLoggedIn');

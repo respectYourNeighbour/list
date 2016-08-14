@@ -23,7 +23,7 @@
             $scope.citate = data;
         });
 
-
+        $scope.status = 'ready';
     }
 
     angular

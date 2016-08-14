@@ -49,6 +49,8 @@
             console.log('change to page ' + num);
            // $('.gifplayer').gifplayer();
         };
+
+        $scope.status = 'ready';
     }
 
     angular

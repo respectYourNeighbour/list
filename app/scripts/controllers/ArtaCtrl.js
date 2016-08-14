@@ -12,6 +12,8 @@
         console.log('Arta Home Controller');
         $scope.WelcomeMessage = 'Welcome to Arta Home!';
         $scope.changeAccessLevel(1);
+
+        $scope.status = 'ready';
     }
 
     angular

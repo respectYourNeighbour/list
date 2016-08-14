@@ -32,8 +32,6 @@
         });
 
 
-
-
         //Pagination definition.
         $scope.currentPage = 1;
         $scope.pageSize = 5;
@@ -42,6 +40,8 @@
             //console.log('change to page ' + num);
             window.scrollTo(0,0);
         };
+
+        $scope.status = 'ready';
     }
 
     angular

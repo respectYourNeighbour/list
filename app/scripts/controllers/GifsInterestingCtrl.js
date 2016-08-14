@@ -25,7 +25,7 @@
             $scope.gifs = data;
         });
 
-
+        $scope.status = 'ready';
     }
 
     angular
